@@ -66,7 +66,7 @@ router.post(
             });
             if (registeredUserWithEmail) {
                 return res.status(401).json({
-                    errors: ["This email is already registered with NYC Permit Hub."]
+                    errors: ["This email is already registered with Algify."]
                 });
             }
 
@@ -78,7 +78,7 @@ router.post(
 
             if (registeredUserWithUsername) {
                 return res.status(401).json({
-                    errors: ["This username is already registered with NYC Permit Hub. Please Choose another one."]
+                    errors: ["This username is already registered with Algify. Please Choose another one."]
                 })
             }
 
