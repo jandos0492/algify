@@ -7,6 +7,7 @@ const { setTokenCookie, requireAuth } = require("../../utils/auth");
 const { User } = require("../../db/models");
 require("dotenv").config();
 const bcrypt = require("bcryptjs");
+const nodemailer = require("nodemailer");
 
 const router = express.Router();
 
@@ -43,49 +44,67 @@ const validateSignup = [
     handleValidationErrors,
 ];
 
+// Create a Nodemailer transporter
+const transporter = nodemailer.createTransport({
+    servide: "gmail",
+    auth: {
+        user: 
+    }
+})
+
 // Sign up
 router.post(
     "",
     validateSignup,
-    asyncHandler(async (req, res, next) => {
+    async (req, res, next) => {
         const { email, password, username } = req.body;
 
         try {
-            const user = await User.signup({ email, username, password });
+            // Send email notification to algify admin
+            await sendSignupNotification(email, username);
 
-            await setTokenCookie(res, user);
-
-            return res.json({
-                user,
-            });
-        } catch (err) {
-            const registeredUserWithEmail = await User.findOne({
-                where: {
-                    email
-                }
-            });
-            if (registeredUserWithEmail) {
-                return res.status(401).json({
-                    errors: ["This email is already registered with Algify."]
-                });
-            }
-
-            const registeredUserWithUsername = await User.findOne({
-                where: {
-                    username
-                }
-            });
-
-            if (registeredUserWithUsername) {
-                return res.status(401).json({
-                    errors: ["This username is already registered with Algify. Please Choose another one."]
-                })
-            }
-
-            console.error("Signup failed.", err);
-            return next(err);
+            // Respond to user indicating that sign-up request has been received
         }
-    }),
+    }
+    // asyncHandler(async (req, res, next) => {
+    //     const { email, password, username } = req.body;
+
+    //     try {
+    //         const user = await User.signup({ email, username, password });
+
+    //         await setTokenCookie(res, user);
+
+    //         return res.json({
+    //             user,
+    //         });
+    //     } catch (err) {
+    //         const registeredUserWithEmail = await User.findOne({
+    //             where: {
+    //                 email
+    //             }
+    //         });
+    //         if (registeredUserWithEmail) {
+    //             return res.status(401).json({
+    //                 errors: ["This email is already registered with Algify."]
+    //             });
+    //         }
+
+    //         const registeredUserWithUsername = await User.findOne({
+    //             where: {
+    //                 username
+    //             }
+    //         });
+
+    //         if (registeredUserWithUsername) {
+    //             return res.status(401).json({
+    //                 errors: ["This username is already registered with Algify. Please Choose another one."]
+    //             })
+    //         }
+
+    //         console.error("Signup failed.", err);
+    //         return next(err);
+    //     }
+    // }),
 );
 
 module.exports = router;
