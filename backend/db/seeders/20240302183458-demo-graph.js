@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert("Graphs", [
+    return queryInterface.bulkInsert("BinaryTrees", [
       {
         no: 35,
         name: 'binary tree welcome',
