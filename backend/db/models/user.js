@@ -101,15 +101,15 @@ module.exports = (sequelize, DataTypes) => {
   // accept an object with a username, email and password key. Hash the password
   // using bcryptjs package's hashSync method. Create a User with the username,
   // email, and hashedPassword. Return the created user with the currentUser scope.
-  User.signup = async function ({ username, email, password }) {
-    const hashedPassword = bcrypt.hashSync(password);
-    const user = await User.create({
-      username: username.toLowerCase(),
-      email: email.toLowerCase(),
-      hashedPassword,
-    });
-    return await User.scope("currentUser").findByPk(user.id);
-  };
+  // User.signup = async function ({ username, email, password }) {
+  //   const hashedPassword = bcrypt.hashSync(password);
+  //   const user = await User.create({
+  //     username: username.toLowerCase(),
+  //     email: email.toLowerCase(),
+  //     hashedPassword,
+  //   });
+  //   return await User.scope("currentUser").findByPk(user.id);
+  // };
 
   User.associate = function (models) {
     // associations can be defined here

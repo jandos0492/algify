@@ -34,7 +34,7 @@ const PasswordResetRequest = () => {
                 setValidEmail("The password request was successful. Please check your email.")
                 setEmail("");
             } else {
-                setErrors(data.errors ? data.errors : ["The email is not associated with this NYC Permit Hub."]);
+                setErrors(data.errors ? data.errors : ["The email is not associated with this Algify."]);
                 setEmail("");
             }
 
