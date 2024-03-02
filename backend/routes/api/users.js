@@ -104,49 +104,25 @@ async function sendSignupNotification(email, username, token) {
     await transporter.sendMail(mailOptions);
 }
 
-// GET /api/users/approve
-// Handle user approval request
-// router.get('/approve', asyncHandler(async (req, res, next) => {
-//     const { token } = req.query;
 
-//     try {
-//         // Find pending sign-up request by token
-//         const pendingSignup = await PendingSignUp.findOne({ where: { token } });
+async function approvedNotification(email, username) {
+    const mailOptions = {
+        from: process.env.GMAIL_USER,
+        to: email,
+        subject: "Algify sign up approved",
+        html: `
+            <p>Hello, ${username},</p>
+            <p>Your request to sign up for Algify has been approved!</p>
+            <p>You can now log in to your account and start exploring Algify's features.</p>
+            <p>Click <a href="http://localhost:3001/login">here</a> to log in.</p>
+        `
+    };
 
-//         if (!pendingSignup) {
-//             return res.status(404).json({
-//                 title: 'Resource Not Found',
-//                 message: "The requested resource couldn't be found.",
-//                 errors: ["The requested resource couldn't be found."]
-//             });
-//         }
-
-//         // Extract email, username, and password from pendingSignup
-//         const { email, username, hashedPassword } = pendingSignup;
-
-//         // Create the user in the database
-//         const user = await User.signup({
-//             email,
-//             username,
-//             hashedPassword,
-//         });
-
-//         // Delete the pending sign-up record
-//         await pendingSignup.destroy();
-
-//         // Respond with the created user
-//         return res.status(200).json({ user });
-//     } catch (error) {
-//         console.error('Error approving user:', error);
-//         return res.status(500).json({
-//             title: 'Internal Server Error',
-//             message: 'An unexpected error occurred while approving the user.'
-//         });
-//     }
-// }));
+    await transporter.sendMail(mailOptions);
+}
 
 
-router.get('/approve', asyncHandler(async (req, res, next) => {
+router.get('/approve', asyncHandler(async (req, res) => {
     const { token } = req.query;
 
     try {
@@ -163,6 +139,10 @@ router.get('/approve', asyncHandler(async (req, res, next) => {
 
         // Extract email, username, and password from pendingSignup
         const { email, username, hashedPassword } = pendingSignup;
+
+        // Sending email to user that he can log in now.
+        approvedNotification(email, username);
+
 
         // Create the user in the database
         const user = await User.create({
@@ -196,7 +176,7 @@ router.post(
             const token = generateToken();
 
             // Save token, email, username, and password in pending signups table
-            await PendingSignUp.create({ email, username, password, token }); // Save plain text password
+            await PendingSignUp.create({ email, username, password, token });
 
             // Send email notification to admin
             await sendSignupNotification(email, username, token);
