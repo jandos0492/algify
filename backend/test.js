@@ -1,4 +1,4 @@
-const array = ["dynamic programming welcome", "fib", "tribonacci", "sum possible", "min change", "count paths", "max path sum", "non adjacent sum", "summing squares", "counting change", "array stepper", "max palin subsequence", "overlap subsequence", "can concat", "quickest concat", "knightly number", "dynamic programming wrap up"]
+const array = ["stack welcome", "paired parentheses", "befitting brackets", "decompress braces", "nesting score", "stack wrap up"];
 // console.log(array.length);
 
 
@@ -12,14 +12,14 @@ const createSeeder = (array) => {
 
     array.forEach((elem, index) => {
         const obj = {};
-        obj.no = index + 71;
+        obj.no = index + 88;
         obj.name = elem;
         const videoName = elem.split(" ").join("-");
         if (checkVideoString(elem)) {
-            obj.video = `https://structy-videos.s3.us-east-2.amazonaws.com/dynamic-programming/${videoName}.mp4`;
+            obj.video = `https://structy-videos.s3.us-east-2.amazonaws.com/stack/${videoName}.mp4`;
         } else {
-            obj.approachVideo = `https://structy-videos.s3.us-east-2.amazonaws.com/dynamic-programming/${videoName}-approach.mp4`;
-            obj.walkthroughVideo = `https://structy-videos.s3.us-east-2.amazonaws.com/dynamic-programming/${videoName}-walkthrough.mp4`;
+            obj.approachVideo = `https://structy-videos.s3.us-east-2.amazonaws.com/stack/${videoName}-approach.mp4`;
+            obj.walkthroughVideo = `https://structy-videos.s3.us-east-2.amazonaws.com/stack/${videoName}-walkthrough.mp4`;
         }
         result.push(obj);
     });
