@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class graph extends Model {
+  class Graph extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  graph.init({
+  Graph.init({
     no: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'graph',
+    modelName: 'Graph',
   });
-  return graph;
+  return Graph;
 };

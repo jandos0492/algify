@@ -1,4 +1,4 @@
-const array = ["linked list welcome", "linked list intro", "linked list warm up", "linked list values", "sum list", "linked list find", "get node value", "reverse list", "zipper lists", "merge lists", "pep talk", "is univalue list", "longest streak", "remove node", "insert node", "create linked list", "add lists", "linked list wrap up"]
+const array = ["binary tree welcome", "binary tree intro", "binary tree warm up", "depth first values", "breadth first values", "tree sum", "tree includes", "tree min value", "max root to leaf path sum", "tree path finder", "tree value count", "how high", "bottom right value", "all tree pahts", "level averages", "leaf list", "binary tree wrap up"]
 
 
 const checkVideoString = (s) => {
@@ -10,14 +10,14 @@ const createSeeder = (array) => {
 
     array.forEach((elem, index) => {
         const obj = {};
-        obj.no = index + 17;
+        obj.no = index + 35;
         obj.name = elem;
         const videoName = elem.split(" ").join("-");
         if (checkVideoString(elem)) {
-            obj.video = `https://structy-videos.s3.us-east-2.amazonaws.com/linked-list/${videoName}.mp4`;
+            obj.video = `https://structy-videos.s3.us-east-2.amazonaws.com/binary-tree/${videoName}.mp4`;
         } else {
-            obj.approachVideo = `https://structy-videos.s3.us-east-2.amazonaws.com/linked-list/${videoName}-approach.mp4`;
-            obj.walkthroughVideo = `https://structy-videos.s3.us-east-2.amazonaws.com/linked-list/${videoName}-walkthrough.mp4`;
+            obj.approachVideo = `https://structy-videos.s3.us-east-2.amazonaws.com/binary-tree/${videoName}-approach.mp4`;
+            obj.walkthroughVideo = `https://structy-videos.s3.us-east-2.amazonaws.com/binary-tree/${videoName}-walkthrough.mp4`;
         }
         result.push(obj);
     });
