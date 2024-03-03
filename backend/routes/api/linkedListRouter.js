@@ -11,4 +11,20 @@ router.get("/linked-lists", async (req, res) => {
     }
 });
 
+
+router.get("/linked-lists/:id", async (req, res) => {
+    const linkedListNo = req.params.id;
+
+    try {
+        const linkedList = await LinkedList.findByPk(linkedListNo);
+        if (!linkedList) {
+            return res.status(400).json({ message: `Linked list data by this id no found.`})
+        }
+        res.json(linkedList);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Server Error" });
+    }
+})
+
 module.exports = router;
