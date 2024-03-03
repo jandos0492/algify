@@ -11,8 +11,8 @@ router.get("/introductions", async (req, res) => {
     }
 });
 
-router.get("/introductions/:no", async (req, res) => {
-    const introductionNo = req.params.no;
+router.get("/introductions/:id", async (req, res) => {
+    const introductionNo = req.params.id;
     try {
         const introduction = await Introduction.findByPk(introductionNo);
 

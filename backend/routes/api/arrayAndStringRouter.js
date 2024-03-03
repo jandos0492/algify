@@ -13,8 +13,8 @@ router.get("/array-and-strings", async (req, res) => {
 });
 
 
-router.get("/array-and-strings:no", async (req, res) => {
-    const arrayAndStringNo = req.params.no;
+router.get("/array-and-strings/:id", async (req, res) => {
+    const arrayAndStringNo = req.params.id;
     try {
         const arrayAndString = await ArrayAndString.findByPk(arrayAndStringNo);
 
