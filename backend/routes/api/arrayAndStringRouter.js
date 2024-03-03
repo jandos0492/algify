@@ -13,6 +13,19 @@ router.get("/array-and-strings", async (req, res) => {
 });
 
 
+router.get("/array-and-strings:no", async (req, res) => {
+    const arrayAndStringNo = req.params.no;
+    try {
+        const arrayAndString = await ArrayAndString.findByPk(arrayAndStringNo);
 
+        if (!arrayAndString) {
+            return res.status(400).json({ message: `Array and String data number ${arrayAndStringNo} not found.` });
+        }
+        res.json(arrayAndString);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Server Error "});
+    }
+});
 
 module.exports = router;
