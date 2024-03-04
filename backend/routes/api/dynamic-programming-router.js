@@ -12,4 +12,18 @@ router.get("/dynamic-programmings", async (req, res) => {
 });
 
 
+router.get("/dynamic-programmings/:id", async (req, res) => {
+    const dynamicProgrammingNo = req.params.id;
+    try {
+        const dynamicProgramming = await DynamicProgramming.findByPk(dynamicProgrammingNo);
+        if (!dynamicProgramming) {
+            return res.status(400).json({ message: `Dynamic programming data by this id ${dynamicProgrammingNo} not found.` });
+        }
+        res.json(dynamicProgramming);
+    } catch (err) {
+        console.error(err);
+        res.status(500).josn({ message: "Server Error" });
+    }
+});
+
 module.exports = router;
