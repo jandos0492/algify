@@ -12,12 +12,12 @@ router.get("/introductions", async (req, res) => {
 });
 
 router.get("/introductions/:id", async (req, res) => {
-    const introductionNo = req.params.id;
+    const introductionId = req.params.id;
     try {
-        const introduction = await Introduction.findByPk(introductionNo);
+        const introduction = await Introduction.findByPk(introductionId);
 
         if (!introduction) {
-            return res.status(400).json({ message: `Introduction data number ${introductionNo} not found.` });
+            return res.status(400).json({ message: `Introduction data by this id ${introductionId} not found.` });
         }
         res.json(introduction)
     } catch (error) {

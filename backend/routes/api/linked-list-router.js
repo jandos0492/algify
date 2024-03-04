@@ -13,12 +13,12 @@ router.get("/linked-lists", async (req, res) => {
 
 
 router.get("/linked-lists/:id", async (req, res) => {
-    const linkedListNo = req.params.id;
+    const linkedListId = req.params.id;
 
     try {
-        const linkedList = await LinkedList.findByPk(linkedListNo);
+        const linkedList = await LinkedList.findByPk(linkedListId);
         if (!linkedList) {
-            return res.status(400).json({ message: `Linked list data by this id no found.`})
+            return res.status(400).json({ message: `Linked list data by this id ${linkedListId} found.`})
         }
         res.json(linkedList);
     } catch (err) {

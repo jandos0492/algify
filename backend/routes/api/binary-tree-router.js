@@ -13,12 +13,12 @@ router.get("/binary-trees", async (req, res) => {
 
 
 router.get("/binary-trees/:id", async (req, res) => {
-    const binaryTreeNo = req.params.id;
+    const binaryTreeId = req.params.id;
 
     try {
-        const binaryTree = await BinaryTree.findByPk(binaryTreeNo);
+        const binaryTree = await BinaryTree.findByPk(binaryTreeId);
         if (!binaryTree) {
-            return res.status(400).json({ message: ` Binary tree data by this id not found`});
+            return res.status(400).json({ message: ` Binary tree data by this id ${binaryTreeId} not found`});
         }
         res.json(binaryTree);
     } catch (err) {

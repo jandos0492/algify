@@ -14,12 +14,12 @@ router.get("/array-and-strings", async (req, res) => {
 
 
 router.get("/array-and-strings/:id", async (req, res) => {
-    const arrayAndStringNo = req.params.id;
+    const arrayAndStringId = req.params.id;
     try {
-        const arrayAndString = await ArrayAndString.findByPk(arrayAndStringNo);
+        const arrayAndString = await ArrayAndString.findByPk(arrayAndStringId);
 
         if (!arrayAndString) {
-            return res.status(400).json({ message: `Array and String data number ${arrayAndStringNo} not found.` });
+            return res.status(400).json({ message: `Array and String data by this id ${arrayAndStringId} not found.` });
         }
         res.json(arrayAndString);
     } catch (err) {
