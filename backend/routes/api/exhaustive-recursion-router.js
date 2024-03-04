@@ -12,4 +12,19 @@ router.get("/exhaustive-recursions", async (req, res) => {
 });
 
 
+router.get("/exhaustive-recursions/:id", async (req, res) => {
+    const exhaustiveRecursionId = req.params.id;
+    try {
+        const exhaustiveRecursion = await ExhaustiveRecursion.findByPk(exhaustiveRecursionId);
+        if (!exhaustiveRecursion) {
+            return res.status(400).json({ message: `Exhaustive recursion data by this id ${exhaustiveRecursionId} not found.`});
+        }
+        res.json(exhaustiveRecursion);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Server Error" });
+    }
+});
+
+
 module.exports = router;
