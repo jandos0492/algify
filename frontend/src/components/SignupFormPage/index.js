@@ -13,6 +13,7 @@ function SignupFormPage() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState([]);
+    const [message, setMessage] = useState("");
 
     useEffect(() => {
         if (sessionUser) {
@@ -20,15 +21,30 @@ function SignupFormPage() {
         }
     }, [sessionUser, navigate])
 
+
+    const clearInputs = () => {
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
+        setUsername("");
+        setMessage("");
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (password === confirmPassword) {
             setErrors([]);
+            setMessage("We have got your request. Please wait for approval...")
             return dispatch(sessionActions.signup({ email, username, password }))
+                .then(() => {
+                    setTimeout(() => {
+                        clearInputs();
+                    }, 2000)
+                })
                 .catch(async (res) => {
                     const data = await res.json();
                     if (data && data.errors) setErrors(data.errors);
-                });
+                })
         }
         return setErrors(["Confirm Password field must be the same as the Password field"]);
     }
@@ -82,6 +98,7 @@ function SignupFormPage() {
                     />
                 </label>
                 <button className="submit-button" type="submit">Sign Up</button>
+                {message && <p className="message">{message}</p>}
             </form>
         </div>
     );

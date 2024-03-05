@@ -8,6 +8,7 @@ import Navigation from './components/Navigation';
 import PasswordResetRequest from './components/PasswordResetRequest';
 import ResetPassword from './components/ResetPassword';
 import Example from './components/Example';
+import Home from './components/Home';
 
 function App() {
   const dispatch = useDispatch();
@@ -35,8 +36,11 @@ function App() {
           {!isAuthenticated && <Route path="/reset-password" element={<PasswordResetRequest />} />}
           {!isAuthenticated && <Route path="/reset-password/:token" element={<ResetPassword />} />}
 
-          {isAuthenticated && (
+          {/* {isAuthenticated && (
             <Route path="/" element={<Example />} />
+          )} */}
+          {isAuthenticated && (
+            <Route path="/" element={<Home />} />
           )}
         </Routes>
       )}
