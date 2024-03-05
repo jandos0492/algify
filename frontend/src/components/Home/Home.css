@@ -1,0 +1,19 @@
+.home-container {
+    margin-top: 20px;
+}
+
+.toggle-button {
+    margin-left: 15px;
+    padding: 5px 10px;
+    background-color: #00274d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    width: 200px;
+}
+
+.introduction-text {
+    margin-bottom: 20px;
+}
