@@ -2,25 +2,31 @@ import React, { useEffect, useState } from "react";
 import { InfinitySpin } from "react-loader-spinner";
 import IntroductionLink from "../Links/IntroductionLink";
 import ArrayAndStringLink from "../Links/ArrayAndStringLink";
+import LinkedListLink from "../Links/LinkedListLink";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Home.css";
 
 const Home = () => {
     const [introductionData, setIntroductionData] = useState([]);
     const [arrayAndStringData, setArrayAndStringData] = useState([]);
+    const [linkedListData, setLinkedListData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isIntroductionVisible, setIsIntroductionVisible] = useState(true);
     const [isArrayAndStringVisible, setIsArrayAndStringVisible] = useState(true);
+    const [isLinkedListVisible, setLinkedListVisible] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const IntroductionRes = await fetch("/api/introductions");
-                const ArrayAndStringRes = await fetch("/api/array-and-strings");
-                const introductionResult = await IntroductionRes.json();
-                const ArrayAndStringResult = await ArrayAndStringRes.json();
+                const introductionRes = await fetch("/api/introductions");
+                const arrayAndStringRes = await fetch("/api/array-and-strings");
+                const linkedListRes = await fetch("/api/linked-lists");
+                const introductionResult = await introductionRes.json();
+                const arrayAndStringResult = await arrayAndStringRes.json();
+                const linkedListResult = await linkedListRes.json();
                 setIntroductionData(introductionResult);
-                setArrayAndStringData(ArrayAndStringResult);
+                setArrayAndStringData(arrayAndStringResult);
+                setLinkedListData(linkedListResult);
                 setLoading(false);
             } catch (err) {
                 console.error("Error fetching the Introduction data", err);
@@ -37,6 +43,10 @@ const Home = () => {
 
     const toggleArrayAndStringVisibility = () => {
         setIsArrayAndStringVisible((prevVisibility) => !prevVisibility);
+    }
+
+    const toggleLinkedListVisibility = () => {
+        setLinkedListVisible((prevVisibility) => !prevVisibility);
     }
 
 
@@ -69,26 +79,48 @@ const Home = () => {
                         isVisible={isIntroductionVisible}
                     />
                 ))}
-                <button className="toggle-button" onClick={toggleArrayAndStringVisibility}>
-                    {isArrayAndStringVisible ? (
-                        <>
-                            Array And String <FaChevronDown />
-                        </>
-                    ) : (
-                        <>
-                            Array And String <FaChevronUp />
-                        </>
-                    )}
-                </button>
+            </div>
+            <button className="toggle-button" onClick={toggleArrayAndStringVisibility}>
+                {isArrayAndStringVisible ? (
+                    <>
+                        Array And String <FaChevronDown />
+                    </>
+                ) : (
+                    <>
+                        Array And String <FaChevronUp />
+                    </>
+                )}
+            </button>
+            <div className="list">
                 {arrayAndStringData.map((arrayAndString) => (
-                    <ArrayAndStringLink 
+                    <ArrayAndStringLink
                         key={`${arrayAndString.name}-${arrayAndString.id}`}
                         arrayAndString={arrayAndString}
                         isVisible={isArrayAndStringVisible}
                     />
                 ))}
             </div>
-        </div>
+            <button className="toggle-button" onClick={toggleLinkedListVisibility}>
+                {isLinkedListVisible ? (
+                    <>
+                        Linked List <FaChevronDown />
+                    </>
+                ) : (
+                    <>
+                        Linked List <FaChevronUp />
+                    </>
+                )}
+            </button>
+            <div className="list">
+                {linkedListData.map((linkedList) => (
+                    <LinkedListLink
+                        key={`${linkedList.name}-${linkedList.id}`}
+                        linkedList={linkedList}
+                        isVisible={isLinkedListVisible}
+                    />
+                ))}
+            </div>
+        </div >
     );
 };
 
