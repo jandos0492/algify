@@ -3,6 +3,7 @@ import { InfinitySpin } from "react-loader-spinner";
 import IntroductionLink from "../Links/IntroductionLink";
 import ArrayAndStringLink from "../Links/ArrayAndStringLink";
 import LinkedListLink from "../Links/LinkedListLink";
+import BinaryTreeLink from "../Links/BinaryTreeLink";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Home.css";
 
@@ -10,10 +11,12 @@ const Home = () => {
     const [introductionData, setIntroductionData] = useState([]);
     const [arrayAndStringData, setArrayAndStringData] = useState([]);
     const [linkedListData, setLinkedListData] = useState([]);
+    const [binaryTreeData, setBinaryTreeData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isIntroductionVisible, setIsIntroductionVisible] = useState(true);
     const [isArrayAndStringVisible, setIsArrayAndStringVisible] = useState(true);
     const [isLinkedListVisible, setLinkedListVisible] = useState(true);
+    const [isBinaryTreeVisible, setIsBinaryTreeVisible] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -21,12 +24,19 @@ const Home = () => {
                 const introductionRes = await fetch("/api/introductions");
                 const arrayAndStringRes = await fetch("/api/array-and-strings");
                 const linkedListRes = await fetch("/api/linked-lists");
+                const binaryTreeRes = await fetch("/api/binary-trees");
+
+
                 const introductionResult = await introductionRes.json();
                 const arrayAndStringResult = await arrayAndStringRes.json();
                 const linkedListResult = await linkedListRes.json();
+                const binaryTreeResult = await binaryTreeRes.json();
+
                 setIntroductionData(introductionResult);
                 setArrayAndStringData(arrayAndStringResult);
                 setLinkedListData(linkedListResult);
+                setBinaryTreeData(binaryTreeResult);
+
                 setLoading(false);
             } catch (err) {
                 console.error("Error fetching the Introduction data", err);
@@ -47,6 +57,10 @@ const Home = () => {
 
     const toggleLinkedListVisibility = () => {
         setLinkedListVisible((prevVisibility) => !prevVisibility);
+    }
+
+    const toggleBinaryTreeVisibility = () => {
+        setIsBinaryTreeVisible((prevVisibility) => !prevVisibility);
     }
 
 
@@ -117,6 +131,26 @@ const Home = () => {
                         key={`${linkedList.name}-${linkedList.id}`}
                         linkedList={linkedList}
                         isVisible={isLinkedListVisible}
+                    />
+                ))}
+            </div>
+            <button className="toggle-button" onClick={toggleBinaryTreeVisibility}>
+                {isBinaryTreeVisible ? (
+                    <>
+                        Binary Tree <FaChevronDown />
+                    </>
+                ): (
+                    <>
+                        Binary Tree <FaChevronUp />
+                    </>
+                )}
+            </button>
+            <div className="list">
+                {binaryTreeData.map((binaryTree) => (
+                    <BinaryTreeLink 
+                        key={`${binaryTree.name}-${binaryTree.id}`}
+                        binaryTree={binaryTree}
+                        isVisible={isBinaryTreeVisible}
                     />
                 ))}
             </div>

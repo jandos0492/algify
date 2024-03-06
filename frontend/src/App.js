@@ -12,6 +12,7 @@ import Home from './components/Home';
 import IntroductionLink from './components/Links/IntroductionLink';
 import ArrayAndStringLink from './components/Links/ArrayAndStringLink';
 import LinkedListLink from "./components/Links/LinkedListLink";
+import BinaryTreeLink from './components/Links/BinaryTreeLink';
 
 function App() {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ function App() {
           {isAuthenticated && <Route path="/:id" element={<IntroductionLink />} />}
           {isAuthenticated && <Route path="/:id" element={<ArrayAndStringLink />} />}
           {isAuthenticated && <Route path="/:id" element={<LinkedListLink />} />}
+          {isAuthenticated && <Route path="/:id" element={<BinaryTreeLink />} />}
         </Routes>
       )}
     </>
