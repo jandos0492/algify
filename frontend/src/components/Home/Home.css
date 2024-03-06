@@ -4,6 +4,7 @@
 
 .toggle-button {
     margin-left: 15px;
+    margin-bottom: 10px;
     padding: 5px 10px;
     background-color: #00274d;
     color: white;
@@ -11,7 +12,7 @@
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
-    width: 200px;
+    width: 300px;
 }
 
 .introduction-text {

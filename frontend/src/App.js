@@ -10,6 +10,7 @@ import ResetPassword from './components/ResetPassword';
 import Example from './components/Example';
 import Home from './components/Home';
 import IntroductionLink from './components/Links/IntroductionLink';
+import ArrayAndStringLink from './components/Links/ArrayAndStringLink';
 
 function App() {
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ function App() {
           )} */}
           {isAuthenticated && <Route path="/*" element={<Home />} />}
           {isAuthenticated && <Route path="/:id" element={<IntroductionLink />} />}
+          {isAuthenticated && <Route path="/:id" element={<ArrayAndStringLink />} />}
         </Routes>
       )}
     </>
