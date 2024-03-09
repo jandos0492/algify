@@ -6,7 +6,8 @@ import LinkedListLink from "../Links/LinkedListLink";
 import BinaryTreeLink from "../Links/BinaryTreeLink";
 import GraphLink from "../Links/GraphLink";
 import DynamicProgrammingLink from "../Links/DynamicProgrammingLink";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import StackLink from "../Links/Stack";
+import {    FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Home.css";
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
     const [binaryTreeData, setBinaryTreeData] = useState([]);
     const [graphData, setGraphData] = useState([]);
     const [dynamicProgrammingData, setDynamicProgrammingData] = useState([]);
+    const [stackData, setStackData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isIntroductionVisible, setIsIntroductionVisible] = useState(false);
     const [isArrayAndStringVisible, setIsArrayAndStringVisible] = useState(false);
@@ -23,6 +25,7 @@ const Home = () => {
     const [isBinaryTreeVisible, setIsBinaryTreeVisible] = useState(false);
     const [isGraphVisible, setIsGraphVisible] = useState(false);
     const [isDynamicProgrammingVisible, setIsDynamicProgrammingVisible] = useState(false);
+    const [isStackVisible, setIsStackVisible] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,6 +36,7 @@ const Home = () => {
                 const binaryTreeRes = await fetch("/api/binary-trees");
                 const graphRes = await fetch("/api/graphs");
                 const dynamicProgrammingRes = await fetch("/api/dynamic-programmings");
+                const stackRes = await fetch("/api/stacks");
 
 
                 const introductionResult = await introductionRes.json();
@@ -41,6 +45,7 @@ const Home = () => {
                 const binaryTreeResult = await binaryTreeRes.json();
                 const graphResult = await graphRes.json();
                 const dynamicProgrammingResult = await dynamicProgrammingRes.json();
+                const stackResult = await stackRes.json();
 
                 setIntroductionData(introductionResult);
                 setArrayAndStringData(arrayAndStringResult);
@@ -48,6 +53,7 @@ const Home = () => {
                 setBinaryTreeData(binaryTreeResult);
                 setGraphData(graphResult);
                 setDynamicProgrammingData(dynamicProgrammingResult);
+                setStackData(stackResult);
 
                 setLoading(false);
             } catch (err) {
@@ -83,6 +89,9 @@ const Home = () => {
         setIsDynamicProgrammingVisible((prevVisibility) => !prevVisibility);
     };
 
+    const toggleStackVisibility = () => {
+        setIsStackVisible((prevVisibility) => !prevVisibility);
+    };
 
     if (loading) {
         return (
@@ -97,7 +106,7 @@ const Home = () => {
             <button className="toggle-button" onClick={toggleIntroductionVisibility}>
                 {isIntroductionVisible ? (
                     <>
-                        Introduction <FaChevronDown />
+                        Introduction   <FaChevronDown />
                     </>
                 ) : (
                     <>
@@ -117,7 +126,7 @@ const Home = () => {
             <button className="toggle-button" onClick={toggleArrayAndStringVisibility}>
                 {isArrayAndStringVisible ? (
                     <>
-                        Array And String <FaChevronDown />
+                        Array And String   <FaChevronDown />
                     </>
                 ) : (
                     <>
@@ -137,7 +146,7 @@ const Home = () => {
             <button className="toggle-button" onClick={toggleLinkedListVisibility}>
                 {isLinkedListVisible ? (
                     <>
-                        Linked List <FaChevronDown />
+                        Linked List    <FaChevronDown />
                     </>
                 ) : (
                     <>
@@ -157,7 +166,7 @@ const Home = () => {
             <button className="toggle-button" onClick={toggleBinaryTreeVisibility}>
                 {isBinaryTreeVisible ? (
                     <>
-                        Binary Tree <FaChevronDown />
+                        Binary Tree    <FaChevronDown />
                     </>
                 ) : (
                     <>
@@ -177,7 +186,7 @@ const Home = () => {
             <button className="toggle-button" onClick={toggleGraphVisibility}>
                 {isGraphVisible ? (
                     <>
-                        Graph <FaChevronDown />
+                        Graph  <FaChevronDown />
                     </>
                 ) : (
                     <>
@@ -197,7 +206,7 @@ const Home = () => {
             <button className="toggle-button" onClick={toggleDynamicProgrammingVisibility}>
                     {isDynamicProgrammingVisible ? (
                         <>
-                            Dynamic Programming <FaChevronDown />
+                            Dynamic Programming    <FaChevronDown />
                         </>
                     ) : (
                         <>
@@ -211,6 +220,26 @@ const Home = () => {
                         key={`${dynamicProgramming.name}-${dynamicProgramming.id}`}
                         dynamicProgramming={dynamicProgramming}
                         isVisible={isDynamicProgrammingVisible}
+                    />
+                ))}
+            </div>
+            <button className="toggle-button" onClick={toggleStackVisibility}>
+                {isStackVisible ? (
+                    <>
+                        Stack  <FaChevronDown />
+                    </>
+                ) : (
+                    <>
+                        Stack <FaChevronUp />
+                    </>
+                )}
+            </button>
+            <div className="list">
+                {stackData.map((stack) => (
+                    <StackLink 
+                        key={`${stack.name}-${stack.id}`}
+                        stack={stack}
+                        isVisible={isStackVisible}
                     />
                 ))}
             </div>
