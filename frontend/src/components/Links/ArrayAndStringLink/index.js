@@ -1,15 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../Links.css";
 
 const ArrayAndStringLink = ({ arrayAndString, isVisible }) => {
     return isVisible ? (
-        <Link to={`/array-and-string/${arrayAndString.id}`} className="link">
+        <NavLink
+            to={`/array-and-string/${arrayAndString.id}`}
+            className="link"
+            style={({ isActive }) => isActive ? { backgroundColor: '#21fd58' } : {}}>
             <div className="info">
                 <h4 className="no">{arrayAndString.no}</h4>
                 <h2 className="name">{arrayAndString.name}</h2>
             </div>
-        </Link>
+        </NavLink>
     ) : null
 };
 
