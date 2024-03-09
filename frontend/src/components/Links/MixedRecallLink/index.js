@@ -14,4 +14,4 @@ const MixedRecallLink = ({ mixedRecall, isVisible }) => {
     ): null
 };
 
-export default MixedRecallLink
+export default MixedRecallLink;

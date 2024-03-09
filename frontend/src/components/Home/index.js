@@ -8,6 +8,7 @@ import GraphLink from "../Links/GraphLink";
 import DynamicProgrammingLink from "../Links/DynamicProgrammingLink";
 import StackLink from "../Links/Stack";
 import ExhaustiveRecursionLink from "../Links/ExhaustiveRecursionLink";
+import MixedRecallLink from "../Links/MixedRecallLink";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Home.css";
 
@@ -20,6 +21,7 @@ const Home = () => {
     const [dynamicProgrammingData, setDynamicProgrammingData] = useState([]);
     const [stackData, setStackData] = useState([]);
     const [exhaustiveRecursionData, setExhaustiveRecursionData] = useState([]);
+    const [mixedRecallData, setMixedRecallData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isIntroductionVisible, setIsIntroductionVisible] = useState(false);
     const [isArrayAndStringVisible, setIsArrayAndStringVisible] = useState(false);
@@ -29,6 +31,7 @@ const Home = () => {
     const [isDynamicProgrammingVisible, setIsDynamicProgrammingVisible] = useState(false);
     const [isStackVisible, setIsStackVisible] = useState(false);
     const [isExhaustiveRecursionVisible, setIsExhaustiveRecursionVisible] = useState(false);
+    const [isMixedRecallVisible, setIsMixedRecallVisible] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -41,7 +44,7 @@ const Home = () => {
                 const dynamicProgrammingRes = await fetch("/api/dynamic-programmings");
                 const stackRes = await fetch("/api/stacks");
                 const exhaustiveRecursionRes = await fetch("/api/exhaustive-recursions");
-
+                const mixedRecallRes = await fetch("/api/mixed-recalls");
 
                 const introductionResult = await introductionRes.json();
                 const arrayAndStringResult = await arrayAndStringRes.json();
@@ -51,6 +54,7 @@ const Home = () => {
                 const dynamicProgrammingResult = await dynamicProgrammingRes.json();
                 const stackResult = await stackRes.json();
                 const exhaustiveRecursionResult = await exhaustiveRecursionRes.json();
+                const mixedRecallResult = await mixedRecallRes.json();
 
                 setIntroductionData(introductionResult);
                 setArrayAndStringData(arrayAndStringResult);
@@ -60,6 +64,7 @@ const Home = () => {
                 setDynamicProgrammingData(dynamicProgrammingResult);
                 setStackData(stackResult);
                 setExhaustiveRecursionData(exhaustiveRecursionResult);
+                setMixedRecallData(mixedRecallResult);
 
                 setLoading(false);
             } catch (err) {
@@ -101,6 +106,10 @@ const Home = () => {
 
     const toggleExhaustiveRecursionVisibility = () => {
         setIsExhaustiveRecursionVisible((prevVisibility) => !prevVisibility);
+    };
+
+    const toggleMixedRecallVisibility = () => {
+        setIsMixedRecallVisible((prevVisibility) => !prevVisibility);
     };
 
     if (loading) {
@@ -270,6 +279,26 @@ const Home = () => {
                         key={`${exhaustiveRecursion.name}-${exhaustiveRecursion.id}`}
                         exhaustiveRecursion={exhaustiveRecursion}
                         isVisible={isExhaustiveRecursionVisible}
+                    />
+                ))}
+            </div>
+            <button className="toggle-button" onClick={toggleMixedRecallVisibility}>
+                {isMixedRecallVisible ? (
+                    <>
+                        Mixed Recall <FaChevronDown />
+                    </>
+                ) : (
+                    <>
+                        Mixed Recall <FaChevronUp />
+                    </>
+                )}
+            </button>
+            <div className="list">
+                {mixedRecallData.map((mixedRecall) => (
+                    <MixedRecallLink 
+                        key={`${mixedRecall.name}-${mixedRecall.id}`}
+                        mixedRecall={mixedRecall}
+                        isVisible={isMixedRecallVisible}
                     />
                 ))}
             </div>
