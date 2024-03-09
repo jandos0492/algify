@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage';
 import * as sessionActions from "./store/session";
 import Navigation from './components/Navigation';
 import PasswordResetRequest from './components/PasswordResetRequest';
 import ResetPassword from './components/ResetPassword';
-import Example from './components/Example';
 import Home from './components/Home';
-import IntroductionLink from './components/Links/IntroductionLink';
-import ArrayAndStringLink from './components/Links/ArrayAndStringLink';
-import LinkedListLink from "./components/Links/LinkedListLink";
-import BinaryTreeLink from './components/Links/BinaryTreeLink';
-import GraphLink from './components/Links/GraphLink';
-import DynamicProgrammingLink from './components/Links/DynamicProgrammingLink';
-import StackLink from './components/Links/Stack';
 
 function App() {
   const dispatch = useDispatch();
@@ -25,13 +17,13 @@ function App() {
   }, [dispatch]);
 
   const isAuthenticated = useSelector((state) => Boolean(state.session.user));
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //     navigate("/login");
-  //   }
-  // }, [isAuthenticated, navigate]);
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate("/login");
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
     <>
@@ -42,18 +34,7 @@ function App() {
           {!isAuthenticated && <Route path="/signup" element={<SignupFormPage />} />}
           {!isAuthenticated && <Route path="/reset-password" element={<PasswordResetRequest />} />}
           {!isAuthenticated && <Route path="/reset-password/:token" element={<ResetPassword />} />}
-
-          {/* {isAuthenticated && (
-            <Route path="/" element={<Example />} />
-          )} */}
           {isAuthenticated && <Route path="/*" element={<Home />} />}
-          {isAuthenticated && <Route path="/:id" element={<IntroductionLink />} />}
-          {isAuthenticated && <Route path="/:id" element={<ArrayAndStringLink />} />}
-          {isAuthenticated && <Route path="/:id" element={<LinkedListLink />} />}
-          {isAuthenticated && <Route path="/:id" element={<BinaryTreeLink />} />}
-          {isAuthenticated && <Route path="/:id" element={<GraphLink />} />}
-          {isAuthenticated && <Route path="/:id" element={<DynamicProgrammingLink />} />}
-          {isAuthenticated && <Route paht="/:id" element={<StackLink />} />}
         </Routes>
       )}
     </>
