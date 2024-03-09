@@ -8,6 +8,7 @@ import Navigation from './components/Navigation';
 import PasswordResetRequest from './components/PasswordResetRequest';
 import ResetPassword from './components/ResetPassword';
 import Home from './components/Home';
+import IntroductionVideos from './components/Videos/IntroductionVideos';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,13 +30,16 @@ function App() {
     <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
-        <Routes>
-          {!isAuthenticated && <Route path="/login" element={<LoginFormPage />} />}
-          {!isAuthenticated && <Route path="/signup" element={<SignupFormPage />} />}
-          {!isAuthenticated && <Route path="/reset-password" element={<PasswordResetRequest />} />}
-          {!isAuthenticated && <Route path="/reset-password/:token" element={<ResetPassword />} />}
-          {isAuthenticated && <Route path="/*" element={<Home />} />}
-        </Routes>
+        <>
+          {isAuthenticated && <Home />}
+          <Routes>
+            {!isAuthenticated && <Route path="/login" element={<LoginFormPage />} />}
+            {!isAuthenticated && <Route path="/signup" element={<SignupFormPage />} />}
+            {!isAuthenticated && <Route path="/reset-password" element={<PasswordResetRequest />} />}
+            {!isAuthenticated && <Route path="/reset-password/:token" element={<ResetPassword />} />}
+            {isAuthenticated && <Route path="/introduction/:id" element={<IntroductionVideos />} />}
+          </Routes>
+        </>
       )}
     </>
   )

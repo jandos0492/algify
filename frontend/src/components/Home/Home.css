@@ -1,5 +1,7 @@
 .home-container {
     margin-top: 20px;
+    float: left;
+    width: 20%
 }
 
 .toggle-button {

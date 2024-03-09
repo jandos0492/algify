@@ -68,7 +68,7 @@ const Home = () => {
 
                 setLoading(false);
             } catch (err) {
-                console.error("Error fetching the Introduction data", err);
+                console.error("Error fetching the all data", err);
                 setLoading(false);
             }
         };
