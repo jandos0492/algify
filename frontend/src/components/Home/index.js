@@ -7,7 +7,8 @@ import BinaryTreeLink from "../Links/BinaryTreeLink";
 import GraphLink from "../Links/GraphLink";
 import DynamicProgrammingLink from "../Links/DynamicProgrammingLink";
 import StackLink from "../Links/Stack";
-import {    FaChevronDown, FaChevronUp } from "react-icons/fa";
+import ExhaustiveRecursionLink from "../Links/ExhaustiveRecursionLink";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Home.css";
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
     const [graphData, setGraphData] = useState([]);
     const [dynamicProgrammingData, setDynamicProgrammingData] = useState([]);
     const [stackData, setStackData] = useState([]);
+    const [exhaustiveRecursionData, setExhaustiveRecursionData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isIntroductionVisible, setIsIntroductionVisible] = useState(false);
     const [isArrayAndStringVisible, setIsArrayAndStringVisible] = useState(false);
@@ -26,6 +28,7 @@ const Home = () => {
     const [isGraphVisible, setIsGraphVisible] = useState(false);
     const [isDynamicProgrammingVisible, setIsDynamicProgrammingVisible] = useState(false);
     const [isStackVisible, setIsStackVisible] = useState(false);
+    const [isExhaustiveRecursionVisible, setIsExhaustiveRecursionVisible] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -37,6 +40,7 @@ const Home = () => {
                 const graphRes = await fetch("/api/graphs");
                 const dynamicProgrammingRes = await fetch("/api/dynamic-programmings");
                 const stackRes = await fetch("/api/stacks");
+                const exhaustiveRecursionRes = await fetch("/api/exhaustive-recursions");
 
 
                 const introductionResult = await introductionRes.json();
@@ -46,6 +50,7 @@ const Home = () => {
                 const graphResult = await graphRes.json();
                 const dynamicProgrammingResult = await dynamicProgrammingRes.json();
                 const stackResult = await stackRes.json();
+                const exhaustiveRecursionResult = await exhaustiveRecursionRes.json();
 
                 setIntroductionData(introductionResult);
                 setArrayAndStringData(arrayAndStringResult);
@@ -54,6 +59,7 @@ const Home = () => {
                 setGraphData(graphResult);
                 setDynamicProgrammingData(dynamicProgrammingResult);
                 setStackData(stackResult);
+                setExhaustiveRecursionData(exhaustiveRecursionResult);
 
                 setLoading(false);
             } catch (err) {
@@ -91,6 +97,10 @@ const Home = () => {
 
     const toggleStackVisibility = () => {
         setIsStackVisible((prevVisibility) => !prevVisibility);
+    };
+
+    const toggleExhaustiveRecursionVisibility = () => {
+        setIsExhaustiveRecursionVisible((prevVisibility) => !prevVisibility);
     };
 
     if (loading) {
@@ -240,6 +250,26 @@ const Home = () => {
                         key={`${stack.name}-${stack.id}`}
                         stack={stack}
                         isVisible={isStackVisible}
+                    />
+                ))}
+            </div>
+            <button className="toggle-button" onClick={toggleExhaustiveRecursionVisibility}>
+                {isExhaustiveRecursionVisible ? (
+                    <>
+                        Exhaustive Recursion <FaChevronDown />
+                    </>
+                ) : (
+                    <>
+                        Exhaustive Recursion <FaChevronUp />
+                    </>
+                )}
+            </button>
+            <div className="list">
+                {exhaustiveRecursionData.map((exhaustiveRecursion) => (
+                    <ExhaustiveRecursionLink
+                        key={`${exhaustiveRecursion.name}-${exhaustiveRecursion.id}`}
+                        exhaustiveRecursion={exhaustiveRecursion}
+                        isVisible={isExhaustiveRecursionVisible}
                     />
                 ))}
             </div>
