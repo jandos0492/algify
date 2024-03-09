@@ -15,6 +15,7 @@ import LinkedListLink from "./components/Links/LinkedListLink";
 import BinaryTreeLink from './components/Links/BinaryTreeLink';
 import GraphLink from './components/Links/GraphLink';
 import DynamicProgrammingLink from './components/Links/DynamicProgrammingLink';
+import StackLink from './components/Links/Stack';
 
 function App() {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ function App() {
           {isAuthenticated && <Route path="/:id" element={<BinaryTreeLink />} />}
           {isAuthenticated && <Route path="/:id" element={<GraphLink />} />}
           {isAuthenticated && <Route path="/:id" element={<DynamicProgrammingLink />} />}
+          {isAuthenticated && <Route paht="/:id" element={<StackLink />} />}
         </Routes>
       )}
     </>
