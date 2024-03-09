@@ -4,6 +4,7 @@ import IntroductionLink from "../Links/IntroductionLink";
 import ArrayAndStringLink from "../Links/ArrayAndStringLink";
 import LinkedListLink from "../Links/LinkedListLink";
 import BinaryTreeLink from "../Links/BinaryTreeLink";
+import GraphLink from "../Links/GraphLink";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Home.css";
 
@@ -12,11 +13,13 @@ const Home = () => {
     const [arrayAndStringData, setArrayAndStringData] = useState([]);
     const [linkedListData, setLinkedListData] = useState([]);
     const [binaryTreeData, setBinaryTreeData] = useState([]);
+    const [graphData, setGraphData] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [isIntroductionVisible, setIsIntroductionVisible] = useState(true);
-    const [isArrayAndStringVisible, setIsArrayAndStringVisible] = useState(true);
-    const [isLinkedListVisible, setLinkedListVisible] = useState(true);
-    const [isBinaryTreeVisible, setIsBinaryTreeVisible] = useState(true);
+    const [isIntroductionVisible, setIsIntroductionVisible] = useState(false);
+    const [isArrayAndStringVisible, setIsArrayAndStringVisible] = useState(false);
+    const [isLinkedListVisible, setLinkedListVisible] = useState(false);
+    const [isBinaryTreeVisible, setIsBinaryTreeVisible] = useState(false);
+    const [isGraphVisible, setIsGraphVisible] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,17 +28,20 @@ const Home = () => {
                 const arrayAndStringRes = await fetch("/api/array-and-strings");
                 const linkedListRes = await fetch("/api/linked-lists");
                 const binaryTreeRes = await fetch("/api/binary-trees");
+                const graphRes = await fetch("/api/graphs");
 
 
                 const introductionResult = await introductionRes.json();
                 const arrayAndStringResult = await arrayAndStringRes.json();
                 const linkedListResult = await linkedListRes.json();
                 const binaryTreeResult = await binaryTreeRes.json();
+                const graphResult = await graphRes.json();
 
                 setIntroductionData(introductionResult);
                 setArrayAndStringData(arrayAndStringResult);
                 setLinkedListData(linkedListResult);
                 setBinaryTreeData(binaryTreeResult);
+                setGraphData(graphResult);
 
                 setLoading(false);
             } catch (err) {
@@ -61,6 +67,10 @@ const Home = () => {
 
     const toggleBinaryTreeVisibility = () => {
         setIsBinaryTreeVisible((prevVisibility) => !prevVisibility);
+    }
+
+    const toggleGraphVisibility = () => {
+        setIsGraphVisible((prevVisibility) => !prevVisibility);
     }
 
 
@@ -139,7 +149,7 @@ const Home = () => {
                     <>
                         Binary Tree <FaChevronDown />
                     </>
-                ): (
+                ) : (
                     <>
                         Binary Tree <FaChevronUp />
                     </>
@@ -147,10 +157,30 @@ const Home = () => {
             </button>
             <div className="list">
                 {binaryTreeData.map((binaryTree) => (
-                    <BinaryTreeLink 
+                    <BinaryTreeLink
                         key={`${binaryTree.name}-${binaryTree.id}`}
                         binaryTree={binaryTree}
                         isVisible={isBinaryTreeVisible}
+                    />
+                ))}
+            </div>
+            <button className="toggle-button" onClick={toggleGraphVisibility}>
+                {isGraphVisible ? (
+                    <>
+                        Graph <FaChevronDown />
+                    </>
+                ) : (
+                    <>
+                        Graph <FaChevronUp />
+                    </>
+                )}
+            </button>
+            <div className="list">
+                {graphData.map((graph) => (
+                    <GraphLink
+                        key={`${graph.name}-${graph.id}`}
+                        graph={graph}
+                        isVisible={isGraphVisible}
                     />
                 ))}
             </div>
