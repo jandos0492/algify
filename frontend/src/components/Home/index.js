@@ -120,7 +120,7 @@ const Home = () => {
                     </>
                 ) : (
                     <>
-                        Introduction <FaChevronUp />
+                            Introduction <FaChevronUp />
                     </>
                 )}
             </button>
