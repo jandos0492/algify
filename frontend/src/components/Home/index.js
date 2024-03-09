@@ -5,6 +5,7 @@ import ArrayAndStringLink from "../Links/ArrayAndStringLink";
 import LinkedListLink from "../Links/LinkedListLink";
 import BinaryTreeLink from "../Links/BinaryTreeLink";
 import GraphLink from "../Links/GraphLink";
+import DynamicProgrammingLink from "../Links/DynamicProgrammingLink";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Home.css";
 
@@ -14,12 +15,14 @@ const Home = () => {
     const [linkedListData, setLinkedListData] = useState([]);
     const [binaryTreeData, setBinaryTreeData] = useState([]);
     const [graphData, setGraphData] = useState([]);
+    const [dynamicProgrammingData, setDynamicProgrammingData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isIntroductionVisible, setIsIntroductionVisible] = useState(false);
     const [isArrayAndStringVisible, setIsArrayAndStringVisible] = useState(false);
     const [isLinkedListVisible, setLinkedListVisible] = useState(false);
     const [isBinaryTreeVisible, setIsBinaryTreeVisible] = useState(false);
     const [isGraphVisible, setIsGraphVisible] = useState(false);
+    const [isDynamicProgrammingVisible, setIsDynamicProgrammingVisible] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,6 +32,7 @@ const Home = () => {
                 const linkedListRes = await fetch("/api/linked-lists");
                 const binaryTreeRes = await fetch("/api/binary-trees");
                 const graphRes = await fetch("/api/graphs");
+                const dynamicProgrammingRes = await fetch("/api/dynamic-programmings");
 
 
                 const introductionResult = await introductionRes.json();
@@ -36,12 +40,14 @@ const Home = () => {
                 const linkedListResult = await linkedListRes.json();
                 const binaryTreeResult = await binaryTreeRes.json();
                 const graphResult = await graphRes.json();
+                const dynamicProgrammingResult = await dynamicProgrammingRes.json();
 
                 setIntroductionData(introductionResult);
                 setArrayAndStringData(arrayAndStringResult);
                 setLinkedListData(linkedListResult);
                 setBinaryTreeData(binaryTreeResult);
                 setGraphData(graphResult);
+                setDynamicProgrammingData(dynamicProgrammingResult);
 
                 setLoading(false);
             } catch (err) {
@@ -59,19 +65,23 @@ const Home = () => {
 
     const toggleArrayAndStringVisibility = () => {
         setIsArrayAndStringVisible((prevVisibility) => !prevVisibility);
-    }
+    };
 
     const toggleLinkedListVisibility = () => {
         setLinkedListVisible((prevVisibility) => !prevVisibility);
-    }
+    };
 
     const toggleBinaryTreeVisibility = () => {
         setIsBinaryTreeVisible((prevVisibility) => !prevVisibility);
-    }
+    };
 
     const toggleGraphVisibility = () => {
         setIsGraphVisible((prevVisibility) => !prevVisibility);
-    }
+    };
+
+    const toggleDynamicProgrammingVisibility = () => {
+        setIsDynamicProgrammingVisible((prevVisibility) => !prevVisibility);
+    };
 
 
     if (loading) {
@@ -181,6 +191,26 @@ const Home = () => {
                         key={`${graph.name}-${graph.id}`}
                         graph={graph}
                         isVisible={isGraphVisible}
+                    />
+                ))}
+            </div>
+            <button className="toggle-button" onClick={toggleDynamicProgrammingVisibility}>
+                    {isDynamicProgrammingVisible ? (
+                        <>
+                            Dynamic Programming <FaChevronDown />
+                        </>
+                    ) : (
+                        <>
+                            Dynamic Programming <FaChevronUp />
+                        </>
+                    )}
+            </button>
+            <div className="list">
+                {dynamicProgrammingData.map((dynamicProgramming) => (
+                    <DynamicProgrammingLink
+                        key={`${dynamicProgramming.name}-${dynamicProgramming.id}`}
+                        dynamicProgramming={dynamicProgramming}
+                        isVisible={isDynamicProgrammingVisible}
                     />
                 ))}
             </div>
