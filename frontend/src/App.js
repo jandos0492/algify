@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage';
 import * as sessionActions from "./store/session";
@@ -26,13 +26,6 @@ function App() {
   }, [dispatch]);
 
   const isAuthenticated = useSelector((state) => Boolean(state.session.user));
-  const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //     navigate("/login");
-  //   }
-  // }, [isAuthenticated, navigate]);
 
   return (
     <>
