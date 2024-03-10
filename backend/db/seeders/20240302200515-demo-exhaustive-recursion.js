@@ -1,9 +1,15 @@
 'use strict';
 
+let options = {};
+if (process.env.NODE_ENV === "production") {
+  options.schema = process.env.SCHEMA
+}
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.bulkInsert("ExhaustiveRecursions", [
+    options.tableName = "ExhaustiveRecursions";
+    queryInterface.bulkInsert(options, [
       {
         no: 94,
         name: 'exhaustive recursion welcome',

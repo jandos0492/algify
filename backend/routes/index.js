@@ -1,8 +1,26 @@
 const express = require("express");
 const router = express.Router();
 const apiRouter = require("./api");
+const apiIntroductions = require("./api/introduction-router");
+const apiArrayAndStrings = require("./api/array-and-string-router");
+const apiLinkedLists = require("./api/linked-list-router");
+const apiBinaryTrees = require("./api/binary-tree-router");
+const apiGraphs = require("./api/graph-router");
+const apiDynamicProgrammings = require("./api/dynamic-programming-router");
+const apiStacks = require("./api/stack-router");
+const apiExhaustiveRecursions = require("./api/exhaustive-recursion-router");
+const apiMixedRecalls = require("./api/mixed-recall-router");
 
 router.use("/api", apiRouter);
+router.use("/api", apiIntroductions);
+router.use("/api", apiArrayAndStrings);
+router.use("/api", apiLinkedLists);
+router.use("/api", apiBinaryTrees);
+router.use("/api", apiGraphs);
+router.use("/api", apiDynamicProgrammings);
+router.use("/api", apiStacks);
+router.use("/api", apiExhaustiveRecursions);
+router.use("/api", apiMixedRecalls);
 
 // Static routes
 // Serve React build files in produciton
@@ -36,7 +54,7 @@ if (process.env.NODE_ENV !== "production") {
     });
 }
 
-router.get("/hello/world", function(req, res) {
+router.get("/hello/world", function (req, res) {
     res.cookie("XSRF-TOKEN", req.csrfToken());
     res.send("Hello World!");
 });

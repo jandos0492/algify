@@ -22,7 +22,7 @@ router.get("/dynamic-programmings/:id", async (req, res) => {
         res.json(dynamicProgramming);
     } catch (err) {
         console.error(err);
-        res.status(500).josn({ message: "Server Error" });
+        res.status(500).json({ message: "Server Error" });
     }
 });
 

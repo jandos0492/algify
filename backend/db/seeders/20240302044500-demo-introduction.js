@@ -1,9 +1,15 @@
 'use strict';
 
+let options = {};
+if (process.env.NODE_ENV === "production") {
+  options.schema = process.env.SCHEMA
+}
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    return await queryInterface.bulkInsert("Introductions", [
+    options.tableName = "Introductions"
+    return await queryInterface.bulkInsert(options, [
       {
         "no": 1,
         "name": "course introduction",

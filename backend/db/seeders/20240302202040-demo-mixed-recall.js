@@ -1,12 +1,18 @@
 'use strict';
 
+let options = {};
+if (process.env.NODE_ENV === "production") {
+  options.schema = process.env.SCHEMA
+}
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert("MixedRecalls", [
+    options.tableName = "MixedRecalls";
+    return queryInterface.bulkInsert(options, [
       {
         no: 102,
-        name: 'mixed recall welcome',
+        name: 'mixed recall welcaome',
         video: 'https://structy-videos.s3.us-east-2.amazonaws.com/mixed-recall/mixed-recall-welcome.mp4'
       },
       {

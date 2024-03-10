@@ -1,9 +1,15 @@
 'use strict';
 
+let options = {};
+if (process.env.NODE_ENV === "production") {
+  options.schema = process.env.SCHEMA
+}
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    queryInterface.bulkInsert("Stacks", [
+    options.tableName = "Stacks";
+    queryInterface.bulkInsert(options, [
       {
         no: 88,
         name: 'stack welcome',
