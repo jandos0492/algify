@@ -11,6 +11,8 @@ import Home from './components/Home';
 import IntroductionVideos from './components/Videos/IntroductionVideos';
 import ArrayAndStringVideos from './components/Videos/ArrayAndStringVideos';
 import LinkedListVideos from './components/Videos/LinkedListVideos';
+import BinaryTreeVideos from './components/Videos/BinaryTreeVideos';
+import GraphVideos from './components/Videos/GraphVideos';
 
 function App() {
   const dispatch = useDispatch();
@@ -42,6 +44,8 @@ function App() {
             {isAuthenticated && <Route path="/introduction/:id" element={<IntroductionVideos />} />}
             {isAuthenticated && <Route path="/array-and-string/:id" element={<ArrayAndStringVideos />} />}
             {isAuthenticated && <Route path="/linked-list/:id" element={<LinkedListVideos />} />}
+            {isAuthenticated && <Route path="/binary-tree/:id" element={<BinaryTreeVideos />} />}
+            {isAuthenticated && <Route path="/graph/:id" element={<GraphVideos />} />}
           </Routes>
         </>
       )}
