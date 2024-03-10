@@ -32,7 +32,7 @@ const DynamicProgrammingVideos = () => {
     }
 
     return (
-        <div className="video-container">
+        <div className="video-container" key={id}>
             {dynamicProgrammingData.video ? (
                 <>
                     <h2 className="video-name">{dynamicProgrammingData.name}</h2>

@@ -32,7 +32,7 @@ const GraphVideos = () => {
     }
 
     return (
-        <div className="video-container">
+        <div className="video-container" key={id}>
             {graphData.video ? (
                 <>
                     <h2 className="video-name">{graphData.name}</h2>

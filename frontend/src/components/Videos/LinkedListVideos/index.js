@@ -33,7 +33,7 @@ const LinkedListVideos = () => {
     }
 
     return (
-        <div className="video-container">
+        <div className="video-container" key={id}>
             {linkedListData.video ? (
                 <>
                     <h2 className="video-name">{linkedListData.name}</h2>
