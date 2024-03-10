@@ -10,6 +10,7 @@ import ResetPassword from './components/ResetPassword';
 import Home from './components/Home';
 import IntroductionVideos from './components/Videos/IntroductionVideos';
 import ArrayAndStringVideos from './components/Videos/ArrayAndStringVideos';
+import LinkedListVideos from './components/Videos/LinkedListVideos';
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ function App() {
             {!isAuthenticated && <Route path="/reset-password/:token" element={<ResetPassword />} />}
             {isAuthenticated && <Route path="/introduction/:id" element={<IntroductionVideos />} />}
             {isAuthenticated && <Route path="/array-and-string/:id" element={<ArrayAndStringVideos />} />}
+            {isAuthenticated && <Route path="/linked-list/:id" element={<LinkedListVideos />} />}
           </Routes>
         </>
       )}

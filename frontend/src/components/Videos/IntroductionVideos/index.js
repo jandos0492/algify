@@ -32,10 +32,6 @@ const IntroductionVideos = () => {
         );
     }
 
-    if (!introductionData) {
-        return <div>No introduction data found for ID: {id}</div>;
-    }
-
     return (
         <div className="video-container" key={id}>
             {introductionData.video ? (

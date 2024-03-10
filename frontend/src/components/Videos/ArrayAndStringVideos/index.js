@@ -32,10 +32,6 @@ const ArrayAndStringVideos = () => {
         );
     }
 
-    if (!arrayAndStringData) {
-        return <div>No introduction data found for ID: {id}</div>;
-    }
-
     return (
         <div className="video-container" key={id}>
             {arrayAndStringData.video ? (
