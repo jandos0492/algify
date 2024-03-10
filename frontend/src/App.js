@@ -13,6 +13,7 @@ import ArrayAndStringVideos from './components/Videos/ArrayAndStringVideos';
 import LinkedListVideos from './components/Videos/LinkedListVideos';
 import BinaryTreeVideos from './components/Videos/BinaryTreeVideos';
 import GraphVideos from './components/Videos/GraphVideos';
+import DynamicProgrammingVideos from './components/Videos/DynamicProgrammingVideos';
 
 function App() {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ function App() {
             {isAuthenticated && <Route path="/linked-list/:id" element={<LinkedListVideos />} />}
             {isAuthenticated && <Route path="/binary-tree/:id" element={<BinaryTreeVideos />} />}
             {isAuthenticated && <Route path="/graph/:id" element={<GraphVideos />} />}
+            {isAuthenticated && <Route path="/dynamic-programming/:id" element={<DynamicProgrammingVideos />} />}
           </Routes>
         </>
       )}
