@@ -16,6 +16,7 @@ import GraphVideos from './components/Videos/GraphVideos';
 import DynamicProgrammingVideos from './components/Videos/DynamicProgrammingVideos';
 import StackVideos from './components/Videos/StackVideos';
 import ExhaustiveRecursionVideos from './components/Videos/ExhaustiveRecursionVideos';
+import MixedRecallVideos from './components/Videos/MixedRecallVideos';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,11 +28,11 @@ function App() {
   const isAuthenticated = useSelector((state) => Boolean(state.session.user));
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!isAuthenticated) {
-      navigate("/login");
-    }
-  }, [isAuthenticated, navigate]);
+  // useEffect(() => {
+  //   if (!isAuthenticated) {
+  //     navigate("/login");
+  //   }
+  // }, [isAuthenticated, navigate]);
 
   return (
     <>
@@ -52,6 +53,7 @@ function App() {
             {isAuthenticated && <Route path="/dynamic-programming/:id" element={<DynamicProgrammingVideos />} />}
             {isAuthenticated && <Route path="/stack/:id" element={<StackVideos />} />}
             {isAuthenticated && <Route path="/exhaustive-recursion/:id" element={<ExhaustiveRecursionVideos />} />}
+            {isAuthenticated && <Route path="/mixed-recall/:id" element={<MixedRecallVideos />} />}
           </Routes>
         </>
       )}

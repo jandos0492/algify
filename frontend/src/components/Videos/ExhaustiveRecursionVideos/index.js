@@ -35,7 +35,7 @@ const ExhaustiveRecursionVideos = () => {
     const { name, video, approachVideo, walkthroughVideo } = exhaustiveRecursionData;
 
     return (
-        <div className="video-container">
+        <div className="video-container" key={id}>
             {video ? (
                 <>
                     <h2 className="video-name">{name}</h2>
