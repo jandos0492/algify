@@ -42,7 +42,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://algify.onrender.com/",
+  "proxy": "http://localhost:3000",
   "devDependencies": {
     "redux-logger": "^3.0.6"
   }
