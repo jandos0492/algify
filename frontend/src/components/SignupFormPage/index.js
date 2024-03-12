@@ -1,60 +1,46 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import './SignupFormPage.css'; // Import your CSS file for styling
-
+import './SignupFormPage.css';
 function SignupFormPage() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const sessionUser = useSelector((state) => state.session.user);
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState([]);
-    const [message, setMessage] = useState("");
 
-    useEffect(() => {
-        if (sessionUser) {
-            return navigate("/");
-        }
-    }, [sessionUser, navigate])
-
-
-    const clearInputs = () => {
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-        setUsername("");
-        setMessage("");
-    };
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (password === confirmPassword) {
-            setErrors([]);
-            setMessage("We have got your request. Please wait for approval...")
-            return dispatch(sessionActions.signup({ email, username, password }))
-                .then(() => {
-                    setTimeout(() => {
-                        clearInputs();
-                    }, 2000)
-                })
-                .catch(async (res) => {
-                    const data = await res.json();
-                    if (data && data.errors) setErrors(data.errors);
-                })
+        setErrors([]);
+        if (password !== confirmPassword) {
+            return setErrors(["Confirm Password field must be the same as the Password field"]);
         }
-        return setErrors(["Confirm Password field must be the same as the Password field"]);
+
+        try {
+            await dispatch(sessionActions.signup({ email, username, password }));
+            navigate("/home");
+        } catch (res) {
+            setEmail("");
+            setUsername("");
+            setPassword("");
+            setConfirmPassword("");
+            const data = await res.json();
+            if (data && data.errors) setErrors(data.errors)
+        }
     }
 
     return (
         <div className="signup-form-container">
             <form className="signup-form" onSubmit={handleSubmit}>
-                <ul className="error-list">
-                    {errors.map((error, idx) => <li key={idx} className="error-item">{error}</li>)}
-                </ul>
+                {errors && (
+                    <ul className="error-list">
+                        {errors.map((error, idx) => <li className="error-item" key={idx}>{error}</li>)}
+                    </ul>
+                )}
                 <label className="form-label">
                     Email
                     <input
@@ -98,7 +84,9 @@ function SignupFormPage() {
                     />
                 </label>
                 <button className="submit-button" type="submit">Sign Up</button>
-                {message && <p className="message">{message}</p>}
+                <div className="login-text">
+                    Already Member? <Link to="/login">Please Sign In here</Link>
+                </div>
             </form>
         </div>
     );
