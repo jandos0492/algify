@@ -6,8 +6,19 @@ const { User, PendingSignUp } = require('../../db/models');
 const nodemailer = require('nodemailer');
 const bcrypt = require('bcryptjs/dist/bcrypt');
 require('dotenv').config();
+const { env } = require("../../db/models");
 
 const router = express.Router();
+
+let host = "";
+
+if (env === "development") {
+    host = "http://localhost:3000"
+} else {
+    host = "https://algify.onrender.com";
+}
+
+console.log(process.env.environment);
 
 // Create a Nodemailer transporter
 const transporter = nodemailer.createTransport({
@@ -97,7 +108,7 @@ async function sendSignupNotification(email, username, token) {
             <p>A new user has requested to sign up:</p>
             <p>Email: ${email}</p>
             <p>Username: ${username}</p>
-            <p>Please approve the sign-up request by clicking <a href="http://localhost:3000/api/users/approve?token=${token}">here</a>.</p>
+            <p>Please approve the sign-up request by clicking <a href="${host}/api/users/approve?token=${token}">here</a>.</p>
         `,
     };
 
@@ -114,7 +125,7 @@ async function approvedNotification(email, username) {
             <p>Hello, ${username},</p>
             <p>Your request to sign up for Algify has been approved!</p>
             <p>You can now log in to your account and start exploring Algify's features.</p>
-            <p>Click <a href="http://localhost:3001/login">here</a> to log in.</p>
+            <p>Click <a href="https://algify.onrender.com/login">here</a> to log in.</p>
         `
     };
 
