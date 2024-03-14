@@ -29,7 +29,7 @@ const PasswordResetRequest = () => {
                 body: JSON.stringify({ email }),
             });
 
-            const data = await response.json();
+            const data = await response.json()
 
             if (response.ok) {
                 setValidEmail("The password request was successful. Please check your email.")
