@@ -44,16 +44,22 @@ function SignupFormPage() {
                 .catch(async (res) => {
                     const data = await res.json();
                     if (data && data.errors) setErrors(data.errors);
+                    if (data && data.message) setMessage(data.message);
+                    setTimeout(() => {
+                        clearInputs();
+                    }, 2000)
                 })
         }
         return setErrors(["Confirm Password field must be the same as the Password field"]);
     }
 
+
     return (
         <div className="signup-form-container">
             <form className="signup-form" onSubmit={handleSubmit}>
                 <ul className="error-list">
-                    {errors.map((error, idx) => <li key={idx} className="error-item">{error}</li>)}
+                    {/* {errors.map((error, idx) => <li key={idx} className="error-item">{error}</li>)} */}
+                    {errors && Array.isArray(errors) && errors.map((error, idx) => <li key={idx} className="error-item">{error}</li>)}
                 </ul>
                 <label className="form-label">
                     Email
