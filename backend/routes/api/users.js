@@ -163,13 +163,17 @@ router.post(
             const token = generateToken();
             const hashedPassword = bcrypt.hashSync(password);
 
-            await PendingSignUp.create({ email, username, hashedPassword, token });
+            if (!waitingForApproval && !registeredUserWithEmail && !registeredUserWithUsername) {
 
-            await sendSignupNotification(email, username, token);
+                await PendingSignUp.create({ email, username, hashedPassword, token });
 
-            return res.status(200).json({
-                message: 'Message One: Your sign-up request has been received. Please wait for approval.'
-            });
+                await sendSignupNotification(email, username, token);
+
+                return res.status(200).json({
+                    message: 'Message One: Your sign-up request has been received. Please wait for approval.'
+                });
+            }
+
         } catch (err) {
             console.error("Signup failed.", err);
             return next(err);

@@ -35,21 +35,21 @@ const ArrayAndStringVideos = () => {
     return (
         <div className="video-container" key={id}>
             {arrayAndStringData.video ? (
-                <>
+                <div className="video-container-1-flex">
                     <h2 className="video-name">{arrayAndStringData.name}</h2>
                     <video key={arrayAndStringData.video} controls className="video-one">
                         <source src={arrayAndStringData.video} type="video/mp4" />
                     </video>
-                </>
+                </div>
             ) : (
                 <div className="video-container-2">
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{arrayAndStringData.name} approach</h2>
                         <video key={arrayAndStringData.approachVideo} controls className="video-two">
                             <source src={arrayAndStringData.approachVideo} type="video/mp4" />
                         </video>
                     </div>
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{arrayAndStringData.name} walkthrough</h2>
                         <video key={arrayAndStringData.walkthroughVideo} controls className="video-two">
                             <source src={arrayAndStringData.walkthroughVideo} type="video/mp4" />

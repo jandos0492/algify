@@ -12,7 +12,7 @@
     background-color: #d5d5d5;
     position: relative;
     object-fit: cover;
-    max-width: 300px;
+    width: 300px;
     max-height: 30px;
     margin-left: 55px;
 }
@@ -40,26 +40,85 @@
 
 @media screen and (max-width: 1250px) {
     .link .name {
-        font-size: 20px;
+        font-size: 16px;
         margin-top: 1px;
+    }
+
+    button.toggle-button {
+        width: 300px;
+    }
+
+    .home-container {
+        width: 300px;
     }
 }
 
+
+
 @media screen and (max-width: 800px) {
-    .no {
+    /* .no {
         position: static;
         margin-top: 3px;
         text-align: center;
         width: 100%;
         left: auto;
-    }
+    } */
 
     .link .name {
+        font-size: 12px;
+    }
+
+    .link .no {
         font-size: 12px;
     }
 
     .link {
         max-height: 170px;
         padding-top: 0;
+    }
+
+    .info {
+        padding-top: 10px;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    button.toggle-button {
+        width: 220px;
+        font-size: 14px;
+    }
+
+    .link {
+        width: 200px;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    button.toggle-button {
+        width: 120px;
+        font-size: 10px;
+        height: 40px;
+        margin-top: 20px;
+        padding: 5px;
+    }
+
+    .link {
+        width: 100px;
+        max-height: 20px;
+    }
+
+    .home-container {
+        padding: 0;
+        margin: 0;
+    }
+
+    .link .name {
+        font-size: 6px;
+    }
+
+    .link .no {
+        font-size: 6px;
     }
 }

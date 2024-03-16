@@ -35,21 +35,21 @@ const IntroductionVideos = () => {
     return (
         <div className="video-container" key={id}>
             {introductionData.video ? (
-                <>
+                <div className="video-container-1-flex">
                     <h2 className="video-name">{introductionData.name}</h2>
                     <video key={introductionData.video} controls className="video-one">
                         <source src={introductionData.video} type="video/mp4" />
                     </video>
-                </>
+                </div>
             ) : (
                 <div className="video-container-2">
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{introductionData.name} approach</h2>
                         <video key={introductionData.approachVideo} controls className="video-two">
                             <source src={introductionData.approachVideo} type="video/mp4" />
                         </video>
                     </div>
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{introductionData.name} walkthrough</h2>
                         <video key={introductionData.walkthroughVideo} controls className="video-two">
                             <source src={introductionData.walkthroughVideo} type="video/mp4" />

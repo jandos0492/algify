@@ -4,8 +4,8 @@ import "../Links.css";
 
 const StackLink = ({ stack, isVisible }) => {
     return isVisible ? (
-        <NavLink 
-            to={`/stack/${stack.id}`} 
+        <NavLink
+            to={`/stack/${stack.id}`}
             className="link"
             style={({ isActive }) => isActive ? { backgroundColor: "#21fd58" } : {}}
         >
@@ -15,6 +15,7 @@ const StackLink = ({ stack, isVisible }) => {
             </div>
         </NavLink>
     ) : null
+
 };
 
 export default StackLink

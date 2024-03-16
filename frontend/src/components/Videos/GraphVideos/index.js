@@ -34,21 +34,21 @@ const GraphVideos = () => {
     return (
         <div className="video-container" key={id}>
             {graphData.video ? (
-                <>
+                <div className="video-container-1-flex">
                     <h2 className="video-name">{graphData.name}</h2>
                     <video key={graphData.video} controls className="video-one">
                         <source src={graphData.video} type="video/mp4" />
                     </video>
-                </>
+                </div>
             ) : (
                 <div className="video-container-2">
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{graphData.name} approach</h2>
                         <video key={graphData.approachVideo} controls className="video-two">
                             <source src={graphData.approachVideo} type="video/mp4" />
                         </video>
                     </div>
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{graphData.name} walkthrough</h2>
                         <video key={graphData.walkthroughVideo} controls className="video-two">
                             <source src={graphData.walkthroughVideo} type="video/mp4" />

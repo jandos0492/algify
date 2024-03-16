@@ -34,7 +34,7 @@ const StackVideos = () => {
     return (
         <div className="video-container" key={id}>
             {stackData.video ? (
-                <>
+                <div className="video-container-1-flex">
                     <h2 className="video-name">{stackData.name}</h2>
                     <video
                         key={stackData.video}
@@ -43,10 +43,10 @@ const StackVideos = () => {
                     >
                         <source src={stackData.video} type="video/mp4" />
                     </video>
-                </>
+                </div>
             ) : (
                 <div className="video-container-2">
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{stackData.name} approach</h2>
                         <video
                             key={stackData.approachVideo}
@@ -56,7 +56,7 @@ const StackVideos = () => {
                             <source src={stackData.approachVideo} type="video/mp4" />
                         </video>
                     </div>
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{stackData.name} walkthrough</h2>
                         <video
                             key={stackData.walkthroughVideo}

@@ -37,21 +37,21 @@ const ExhaustiveRecursionVideos = () => {
     return (
         <div className="video-container" key={id}>
             {video ? (
-                <>
+                <div className="video-container-1-flex">
                     <h2 className="video-name">{name}</h2>
                     <video key={video} controls className="video-one">
                         <source src={video} type="video/mp4" />
                     </video>
-                </>
+                </div>
             ) : (
                 <div className="video-container-2">
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{name} approach</h2>
                         <video key={approachVideo} controls className="video-two" >
                             <source src={approachVideo} type="video/mp4" />
                         </video>
                     </div>
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{name} walkthrough</h2>
                         <video key={walkthroughVideo} controls className="video-two">
                             <source src={walkthroughVideo} type="video/mp4" />

@@ -35,21 +35,22 @@ const BinaryTreeVideos = () => {
     return (
         <div className="video-container" key={id}>
             {binaryTreeData.video ? (
-                <>
+
+                <div className="video-container-1-flex">
                     <h2 className="video-name">{binaryTreeData.name}</h2>
                     <video key={binaryTreeData.video} controls className="video-one">
                         <source src={binaryTreeData.video} type="video/mp4" />
                     </video>
-                </>
+                </div>
             ) : (
                 <div className="video-container-2">
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{binaryTreeData.name} approach</h2>
                         <video key={binaryTreeData.approachVideo} controls className="video-two">
                             <source src={binaryTreeData.approachVideo} type="video/mp4" />
                         </video>
                     </div>
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{binaryTreeData.name} walkthrough</h2>
                         <video key={binaryTreeData.walkthroughVideo} controls className="video-two">
                             <source src={binaryTreeData.walkthroughVideo} type="video/mp4" />

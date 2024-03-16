@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupFormPage.css'; // Import your CSS file for styling
 
@@ -54,6 +54,7 @@ function SignupFormPage() {
     }
 
 
+
     return (
         <div className="signup-form-container">
             <form className="signup-form" onSubmit={handleSubmit}>
@@ -104,6 +105,9 @@ function SignupFormPage() {
                     />
                 </label>
                 <button className="submit-button" type="submit">Sign Up</button>
+                <div className="login-text">
+                    Already Member? <Link to="/login">Please Sign In here</Link>
+                </div>
                 {message && <p className="message">{message}</p>}
             </form>
         </div>

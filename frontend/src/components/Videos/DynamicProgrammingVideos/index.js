@@ -34,15 +34,15 @@ const DynamicProgrammingVideos = () => {
     return (
         <div className="video-container" key={id}>
             {dynamicProgrammingData.video ? (
-                <>
+                <div className="video-container-1-flex">
                     <h2 className="video-name">{dynamicProgrammingData.name}</h2>
                     <video key={dynamicProgrammingData.video} controls className="video-one">
                         <source src={dynamicProgrammingData.video} type="video/mp4" />
                     </video>
-                </>
+                </div>
             ) : (
                 <div className="video-container-2">
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{dynamicProgrammingData.name} approach</h2>
                         <video
                             key={dynamicProgrammingData.approachVideo}
@@ -52,9 +52,9 @@ const DynamicProgrammingVideos = () => {
                             <source src={dynamicProgrammingData.approachVideo} type="video/mp4" />
                         </video>
                     </div>
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{dynamicProgrammingData.name} walkthrough</h2>
-                        <video 
+                        <video
                             key={dynamicProgrammingData.walkthroughVideo}
                             controls
                             className="video-two"

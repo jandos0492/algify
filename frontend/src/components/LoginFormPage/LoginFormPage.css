@@ -4,7 +4,7 @@
     align-items: center;
     height: 100vh;
     background: #1e2b3a;
-    /* background-image: url('../../../public/images/home/home-image.jpg'); */
+    background-image: url('https://structy-videos.s3.us-east-2.amazonaws.com/images/algify2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

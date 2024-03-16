@@ -22,3 +22,19 @@
 .introduction-text {
     margin-bottom: 20px;
 }
+
+
+@media screen and (max-width: 1250px) {
+    a.link {
+        max-width: 280px;
+    }
+
+}
+
+
+@media screen and (max-width: 550px) {
+    .home-container {
+        padding: 0;
+        margin: 0;
+    }
+}

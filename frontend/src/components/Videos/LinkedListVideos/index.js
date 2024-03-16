@@ -35,21 +35,21 @@ const LinkedListVideos = () => {
     return (
         <div className="video-container" key={id}>
             {linkedListData.video ? (
-                <>
+                <div className="video-container-1-flex">
                     <h2 className="video-name">{linkedListData.name}</h2>
                     <video key={linkedListData.video} controls className="video-one">
                         <source src={linkedListData.video} type="video/mp4" />
                     </video>
-                </>
+                </div>
             ) : (
                 <div className="video-container-2">
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{linkedListData.name} approach</h2>
                         <video key={linkedListData.approachVideo} controls className="video-two">
                             <source src={linkedListData.approachVideo} type="video/mp4" />
                         </video>
                     </div>
-                    <div>
+                    <div className="video-container-2-flex">
                         <h2 className="video-name">{linkedListData.name} walkthrough</h2>
                         <video key={linkedListData.walkthroughVideo} controls className="video-two">
                             <source src={linkedListData.walkthroughVideo} type="video/mp4" />
