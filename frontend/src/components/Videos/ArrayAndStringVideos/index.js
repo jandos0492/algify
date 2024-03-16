@@ -41,8 +41,6 @@ const ArrayAndStringVideos = () => {
                         key={arrayAndStringData.video}
                         controls="true"
                         className="video-one"
-                        autoplay
-                        playsInline
                     >
                         <source src={arrayAndStringData.video} type="video/mp4" />
                     </video>

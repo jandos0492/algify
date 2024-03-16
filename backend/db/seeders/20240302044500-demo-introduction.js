@@ -13,30 +13,30 @@ module.exports = {
       {
         "no": 1,
         "name": "course introduction",
-        "video": "https://structy-videos.s3.us-east-2.amazonaws.com/introduction/course-introduction.mp4",
+        "video": "https://algify-videos.s3.us-east-2.amazonaws.com/introduction/course-introduction.mov",
       },
       {
         "no": 2,
         "name": "code workspace tour",
-        "video": "https://structy-videos.s3.us-east-2.amazonaws.com/introduction/code-workspace-tour.mp4"
+        "video": "https://algify-videos.s3.us-east-2.amazonaws.com/introduction/code-workspace-tour.mov"
       },
       {
         "no": 3,
         "name": "hey programmer",
-        "approachVideo": "https://structy-videos.s3.us-east-2.amazonaws.com/introduction/hey-programmer-approach.mp4",
-        "walkthroughVideo": "https://structy-videos.s3.us-east-2.amazonaws.com/introduction/hey-programmer-walkthrough.mp4"
+        "approachVideo": "https://algify-videos.s3.us-east-2.amazonaws.com/introduction/hey-programmer-approach.mov",
+        "walkthroughVideo": "https://algify-videos.s3.us-east-2.amazonaws.com/introduction/hey-programmer-walkthrough.mov"
       },
       {
         "no": 4,
         "name": "max value",
-        "approachVideo": "https://structy-videos.s3.us-east-2.amazonaws.com/introduction/max-value-approach.mp4",
-        "walkthroughVideo": "https://structy-videos.s3.us-east-2.amazonaws.com/introduction/max-value-walkthrough.mp4"
+        "approachVideo": "https://algify-videos.s3.us-east-2.amazonaws.com/introduction/max-value-approach.mov",
+        "walkthroughVideo": "https://algify-videos.s3.us-east-2.amazonaws.com/introduction/max-value-walkthrough.mov"
       },
       {
         "no": 5,
         "name": "is prime",
-        "approachVideo": "https://structy-videos.s3.us-east-2.amazonaws.com/introduction/is-prime-approach.mp4",
-        "walkthroughVideo": "https://structy-videos.s3.us-east-2.amazonaws.com/introduction/is-prime-walkthrough.mp4"
+        "approachVideo": "https://algify-videos.s3.us-east-2.amazonaws.com/introduction/is-prime-approach.mov",
+        "walkthroughVideo": "https://algify-videos.s3.us-east-2.amazonaws.com/introduction/is-prime-walkthrough.mov"
       }
     ])
   },

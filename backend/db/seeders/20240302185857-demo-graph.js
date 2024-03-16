@@ -13,111 +13,111 @@ module.exports = {
       {
         no: 52,
         name: 'graph welcome',
-        video: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/graph-welcome.mp4'
+        video: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/graph-welcome.mov'
       },
       {
         no: 53,
         name: 'graph intro',
-        video: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/graph-intro.mp4'
+        video: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/graph-intro.mov'
       },
       {
         no: 54,
         name: 'graph warm up',
-        video: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/graph-warm-up.mp4'
+        video: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/graph-warm-up.mov'
       },
       {
         no: 55,
         name: 'has path',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/has-path-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/has-path-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/has-path-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/has-path-walkthrough.mov'
       },
       {
         no: 56,
         name: 'undirected path',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/undirected-path-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/undirected-path-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/undirected-path-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/undirected-path-walkthrough.mov'
       },
       {
         no: 57,
         name: 'connected components count',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/connected-components-count-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/connected-components-count-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/connected-components-count-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/connected-components-count-walkthrough.mov'
       },
       {
         no: 58,
         name: 'largest component',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/largest-component-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/largest-component-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/largest-component-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/largest-component-walkthrough.mov'
       },
       {
         no: 59,
         name: 'slow and steady',
-        video: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/slow-and-steady.mp4',
+        video: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/slow-and-steady.mov',
       },
       {
         no: 60,
         name: 'shortest path',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/shortest-path-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/shortest-path-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/shortest-path-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/shortest-path-walkthrough.mov'
       },
       {
         no: 61,
         name: 'island count',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/island-count-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/island-count-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/island-count-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/island-count-walkthrough.mov'
       },
       {
         no: 62,
         name: 'minimum island',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/minimum-island-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/minimum-island-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/minimum-island-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/minimum-island-walkthrough.mov'
       },
       {
         no: 63,
         name: 'closest carrot',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/closest-carrot-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/closest-carrot-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/closest-carrot-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/closest-carrot-walkthrough.mov'
       },
       {
         no: 64,
         name: 'longest path',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/longest-path-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/longest-path-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/longest-path-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/longest-path-walkthrough.mov'
       },
       {
         no: 65,
         name: 'semesters required',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/semesters-required-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/semesters-required-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/semesters-required-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/semesters-required-walkthrough.mov'
       },
       {
         no: 66,
         name: 'best bridge',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/best-bridge-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/best-bridge-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/best-bridge-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/best-bridge-walkthrough.mov'
       },
       {
         no: 67,
         name: 'has cycle',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/has-cycle-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/has-cycle-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/has-cycle-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/has-cycle-walkthrough.mov'
       },
       {
         no: 68,
         name: 'prereqs possible',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/prereqs-possible-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/prereqs-possible-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/prereqs-possible-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/prereqs-possible-walkthrough.mov'
       },
       {
         no: 69,
         name: 'knight attack',
-        approachVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/knight-attack-approach.mp4',
-        walkthroughVideo: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/knight-attack-walkthrough.mp4'
+        approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/knight-attack-approach.mov',
+        walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/knight-attack-walkthrough.mov'
       },
       {
         no: 70,
         name: 'graph wrap up',
-        video: 'https://structy-videos.s3.us-east-2.amazonaws.com/graph/graph-wrap-up.mp4'
+        video: 'https://algify-videos.s3.us-east-2.amazonaws.com/graph/graph-wrap-up.mov'
       }
     ])
   },

@@ -32,6 +32,14 @@
     align-items: center;
 }
 
+video {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
 .video-name {
     margin: 20px;
     width: fit-content;
@@ -39,6 +47,7 @@
 
 .video-one {
     max-width: 1200px;
+    border: 1px solid black;
 }
 
 .video-two {

@@ -64,68 +64,6 @@ const validateSignup = [
     handleValidationErrors,
 ];
 
-// POST /api/users
-// Handle user signup request
-// router.post('/',
-//     validateSignup,
-//     asyncHandler(async (req, res, next) => {
-//         const { email, username, password } = req.body;
-
-//         try {
-//             // Generate token
-//             const token = generateToken();
-//             const hashedPassword = bcrypt.hashSync(password);
-
-//             // Save token and user details in pending signups table
-//             await PendingSignUp.create({ email, username, hashedPassword, token });
-
-//             // Send email notification to admin
-//             await sendSignupNotification(email, username, token);
-
-//             return res.status(200).json({
-//                 message: 'Message One: Your sign-up request has been received. Please wait for approval.',
-//             });
-//         } catch (err) {
-//             const registeredUserWithEmail = await User.findOne({
-//                 where: {
-//                     email
-//                 }
-//             });
-//             if (registeredUserWithEmail) {
-//                 return res.status(401).json({
-//                     errors: ["This email is already registered with Algify. Please Login."]
-//                 });
-//             }
-
-//             const registeredUserWithUsername = await User.findOne({
-//                 where: {
-//                     username
-//                 }
-//             });
-
-//             if (registeredUserWithUsername) {
-//                 return res.status(401).json({
-//                     errors: ["This username is already registered with Algify. Please Choose another one."]
-//                 })
-//             }
-
-//             const waitingForApproval = await PendingSignUp.findOne({
-//                 where: {
-//                     email
-//                 }
-//             });
-
-//             if (waitingForApproval) {
-//                 return res.status(401).json({
-//                     errors: ["This user waiting for approval from Admin."]
-//                 })
-//             }
-
-//             console.error("Signup failed.", err);
-//             return next(err);
-//         }
-//     }));
-
 router.post(
     '/',
     validateSignup,
@@ -171,7 +109,6 @@ router.post(
                 });
             }
 
-            // If the user is not found in either table, proceed with creating a new pending signup entry
             const token = generateToken();
             const hashedPassword = bcrypt.hashSync(password);
 
@@ -278,33 +215,5 @@ router.get('/approve', asyncHandler(async (req, res) => {
         });
     }
 }));
-
-// POST /api/users
-// Handle user signup request
-// router.post(
-//     '/',
-//     validateSignup,
-//     asyncHandler(async (req, res, next) => {
-//         const { email, username, password } = req.body;
-
-//         try {
-//             // Generate token
-//             const token = generateToken();
-
-//             // Save token, email, username, and password in pending signups table
-//             await PendingSignUp.create({ email, username, password, token });
-
-//             // Send email notification to admin
-//             await sendSignupNotification(email, username, token);
-
-//             return res.status(200).json({
-//                 message: ' Message Two: Your sign-up request has been received. Please wait for approval.',
-//             });
-//         } catch (error) {
-//             console.error('Signup failed.', error);
-//             return next(error);
-//         }
-//     })
-// );
 
 module.exports = router;

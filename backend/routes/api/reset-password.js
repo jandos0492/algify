@@ -154,7 +154,7 @@ const sendEmail = async (to, subject, text) => {
         from: process.env.GMAIL_USER,
         to,
         subject,
-        text,
+        html: text,
     };
 
     try {
@@ -192,7 +192,7 @@ router.post(
 
         // Send reset token to the user via email
         const emailSubject = "Password Reset";
-        const emailText = `Click the following link to reset your password: ${host}/${resetToken}`
+        const emailText = `Click <a href="${host}/${resetToken}">here</a> to reset the password.`
 
         await sendEmail(email, emailSubject, emailText);
 
