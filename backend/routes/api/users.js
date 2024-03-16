@@ -9,7 +9,6 @@ require('dotenv').config();
 const router = express.Router();
 
 const env = process.env.NODE_ENV;
-console.log("env:", env);
 
 let host1 = "";
 let host2 = "";
