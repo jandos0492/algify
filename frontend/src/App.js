@@ -34,10 +34,12 @@ function App() {
         <>
           {isAuthenticated && <Home />}
           <Routes>
+            {!isAuthenticated && <Route path="*" element={<LoginFormPage />} />}
             {!isAuthenticated && <Route path="/login" element={<LoginFormPage />} />}
             {!isAuthenticated && <Route path="/signup" element={<SignupFormPage />} />}
             {!isAuthenticated && <Route path="/reset-password" element={<PasswordResetRequest />} />}
             {!isAuthenticated && <Route path="/reset-password/:token" element={<ResetPassword />} />}
+
             {isAuthenticated && <Route path="/introduction/:id" element={<IntroductionVideos />} />}
             {isAuthenticated && <Route path="/array-and-string/:id" element={<ArrayAndStringVideos />} />}
             {isAuthenticated && <Route path="/linked-list/:id" element={<LinkedListVideos />} />}
