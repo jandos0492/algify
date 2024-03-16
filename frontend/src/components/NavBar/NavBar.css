@@ -12,7 +12,7 @@ html {
 } */
 
 header {
-    background-color: #091827;
+    background-color: #02274D;
     position: sticky;
     top: 0;
     height: 80px;
@@ -110,7 +110,7 @@ nav a {
     position: fixed;
     top: 20px;
     right: 0;
-    background-color: #1C232B;
+    background-color: #02274D;
     width: 150px;
     flex-direction: column;
     align-items: flex-start;
