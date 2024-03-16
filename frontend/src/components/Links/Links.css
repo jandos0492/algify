@@ -97,16 +97,18 @@
 
 @media screen and (max-width: 550px) {
     button.toggle-button {
-        width: 120px;
+        width: 160px;
         font-size: 10px;
         height: 40px;
         margin-top: 20px;
         padding: 5px;
+        margin-left: 10px;
     }
 
     .link {
-        width: 100px;
+        width: 150px;
         max-height: 20px;
+        margin-left: 10px;
     }
 
     .home-container {
@@ -115,10 +117,10 @@
     }
 
     .link .name {
-        font-size: 6px;
+        font-size: 7.5px;
     }
 
     .link .no {
-        font-size: 6px;
+        font-size: 7.5px;
     }
 }
