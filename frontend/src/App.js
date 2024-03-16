@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage';
 import * as sessionActions from "./store/session";
-import Navigation from './components/Navigation';
 import PasswordResetRequest from './components/PasswordResetRequest';
 import ResetPassword from './components/ResetPassword';
 import Home from './components/Home';
@@ -17,6 +16,7 @@ import DynamicProgrammingVideos from './components/Videos/DynamicProgrammingVide
 import StackVideos from './components/Videos/StackVideos';
 import ExhaustiveRecursionVideos from './components/Videos/ExhaustiveRecursionVideos';
 import MixedRecallVideos from './components/Videos/MixedRecallVideos';
+import NavBar from "./components/NavBar";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
+      <NavBar isAuthenticated={isAuthenticated} />
       {isLoaded && (
         <>
           {isAuthenticated && <Home />}
