@@ -45,13 +45,21 @@ const IntroductionVideos = () => {
                 <div className="video-container-2">
                     <div className="video-container-2-flex">
                         <h2 className="video-name">{introductionData.name} approach</h2>
-                        <video key={introductionData.approachVideo} controls className="video-two">
+                        <video
+                            key={introductionData.approachVideo}
+                            controls
+                            className="video-two"
+                        >
                             <source src={introductionData.approachVideo} type="video/mp4" />
                         </video>
                     </div>
                     <div className="video-container-2-flex">
                         <h2 className="video-name">{introductionData.name} walkthrough</h2>
-                        <video key={introductionData.walkthroughVideo} controls className="video-two">
+                        <video
+                            key={introductionData.walkthroughVideo}
+                            controls
+                            className="video-two"
+                        >
                             <source src={introductionData.walkthroughVideo} type="video/mp4" />
                         </video>
                     </div>
