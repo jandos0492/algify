@@ -228,7 +228,7 @@ const validateResetPasswordWithToken = [
 ];
 
 router.post(
-    "/reset-password/:token",
+    "/:token",
     validateResetPasswordWithToken,
     asyncHandler(async (req, res) => {
         const { token } = req.params;

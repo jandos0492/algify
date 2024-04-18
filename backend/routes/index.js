@@ -10,7 +10,6 @@ const apiDynamicProgrammings = require("./api/dynamic-programming-router");
 const apiStacks = require("./api/stack-router");
 const apiExhaustiveRecursions = require("./api/exhaustive-recursion-router");
 const apiMixedRecalls = require("./api/mixed-recall-router");
-const apiResetPassword = require("./api/reset-password");
 
 router.use("/api", apiRouter);
 router.use("/api", apiIntroductions);
@@ -22,7 +21,6 @@ router.use("/api", apiDynamicProgrammings);
 router.use("/api", apiStacks);
 router.use("/api", apiExhaustiveRecursions);
 router.use("/api", apiMixedRecalls);
-router.use("/api", apiResetPassword);
 
 // Static routes
 // Serve React build files in produciton
