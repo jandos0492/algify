@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { BeginnerRecursion } = require("../../db/models");
 
 
-router.get("/beginner-recursion", async (req, res) => {
+router.get("/beginner-recursions", async (req, res) => {
     try {
         const beginnerRecursions = await BeginnerRecursion.findAll();
         res.json(beginnerRecursions);
@@ -13,7 +13,7 @@ router.get("/beginner-recursion", async (req, res) => {
 });
 
 
-router.get("/beginner-recursion/:id", async (req, res) => {
+router.get("/beginner-recursions/:id", async (req, res) => {
     const beginnerRecursionId = req.params.id;
     try {
         const beginnerRecursion = await BeginnerRecursion.findByPk(beginnerRecursionId);

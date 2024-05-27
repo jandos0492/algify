@@ -11,47 +11,47 @@ module.exports = {
     options.tableName = "ExhaustiveRecursions";
     queryInterface.bulkInsert(options, [
       {
-        no: 94,
+        no: 103,
         name: 'exhaustive recursion welcome',
         video: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/exhaustive-recursion-welcome.mov'
       },
       {
-        no: 95,
+        no: 104,
         name: 'subsets',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/subsets-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/subsets-walkthrough.mov'
       },
       {
-        no: 96,
+        no: 105,
         name: 'permutations',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/permutations-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/permutations-walkthrough.mov'
       },
       {
-        no: 97,
+        no: 106,
         name: 'break time',
         video: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/break-time.mov',
       },
       {
-        no: 98,
+        no: 107,
         name: 'create combinations',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/create-combinations-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/create-combinations-walkthrough.mov'
       },
       {
-        no: 99,
+        no: 108,
         name: 'parenthetical possibilities',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/parenthetical-possibilities-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/parenthetical-possibilities-walkthrough.mov'
       },
       {
-        no: 100,
+        no: 109,
         name: 'substitute synonyms',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/substitute-synonyms-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/substitute-synonyms-walkthrough.mov'
       },
       {
-        no: 101,
+        no: 110,
         name: 'exhaustive recursion wrap up',
         video: 'https://algify-videos.s3.us-east-2.amazonaws.com/exhaustive-recursion/exhaustive-recursion-wrap-up.mov'
       }

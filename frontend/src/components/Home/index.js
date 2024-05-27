@@ -9,6 +9,7 @@ import DynamicProgrammingLink from "../Links/DynamicProgrammingLink";
 import StackLink from "../Links/Stack";
 import ExhaustiveRecursionLink from "../Links/ExhaustiveRecursionLink";
 import MixedRecallLink from "../Links/MixedRecallLink";
+import BeginnerRecursionLink from "../Links/BeginnerRecursionLink";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Home.css";
 
@@ -22,6 +23,7 @@ const Home = () => {
     const [stackData, setStackData] = useState([]);
     const [exhaustiveRecursionData, setExhaustiveRecursionData] = useState([]);
     const [mixedRecallData, setMixedRecallData] = useState([]);
+    const [beginnerRecursionData, setBeginnerRecursionData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isIntroductionVisible, setIsIntroductionVisible] = useState(false);
     const [isArrayAndStringVisible, setIsArrayAndStringVisible] = useState(false);
@@ -32,6 +34,7 @@ const Home = () => {
     const [isStackVisible, setIsStackVisible] = useState(false);
     const [isExhaustiveRecursionVisible, setIsExhaustiveRecursionVisible] = useState(false);
     const [isMixedRecallVisible, setIsMixedRecallVisible] = useState(false);
+    const [isBeginnerRecursionVisible, setIsBeginnerRecursionVisible] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -45,6 +48,7 @@ const Home = () => {
                 const stackRes = await fetch("/api/stacks");
                 const exhaustiveRecursionRes = await fetch("/api/exhaustive-recursions");
                 const mixedRecallRes = await fetch("/api/mixed-recalls");
+                const beginenrRecursionRes = await fetch("/api/beginner-recursions")
 
                 const introductionResult = await introductionRes.json();
                 const arrayAndStringResult = await arrayAndStringRes.json();
@@ -55,6 +59,7 @@ const Home = () => {
                 const stackResult = await stackRes.json();
                 const exhaustiveRecursionResult = await exhaustiveRecursionRes.json();
                 const mixedRecallResult = await mixedRecallRes.json();
+                const beginnerRecursionResult = await beginenrRecursionRes.json();
 
                 setIntroductionData(introductionResult);
                 setArrayAndStringData(arrayAndStringResult);
@@ -65,6 +70,7 @@ const Home = () => {
                 setStackData(stackResult);
                 setExhaustiveRecursionData(exhaustiveRecursionResult);
                 setMixedRecallData(mixedRecallResult);
+                setBeginnerRecursionData(beginnerRecursionResult)
 
                 setLoading(false);
             } catch (err) {
@@ -111,6 +117,10 @@ const Home = () => {
     const toggleMixedRecallVisibility = () => {
         setIsMixedRecallVisible((prevVisibility) => !prevVisibility);
     };
+
+    const toggleBeginnerRecursionVisibility = () => {
+        setIsBeginnerRecursionVisible((prevVisibility) => !prevVisibility);
+    }
 
     if (loading) {
         return (
@@ -159,6 +169,26 @@ const Home = () => {
                         key={`${arrayAndString.name}-${arrayAndString.id}`}
                         arrayAndString={arrayAndString}
                         isVisible={isArrayAndStringVisible}
+                    />
+                ))}
+            </div>
+            <button className="toggle-button" onClick={toggleBeginnerRecursionVisibility}>
+                {isBeginnerRecursionVisible ? (
+                    <>
+                        Beginner Recursion   <FaChevronDown />
+                    </>
+                ) : (
+                    <>
+                        Beginner Recursion <FaChevronUp />
+                    </>
+                )}
+            </button>
+            <div className="list">
+                {beginnerRecursionData.map((beginnerRecursion) => (
+                    <BeginnerRecursionLink
+                        key={`${beginnerRecursion.name}-${beginnerRecursion.id}`}
+                        beginnerRecursion={beginnerRecursion}
+                        isVisible={isBeginnerRecursionVisible}
                     />
                 ))}
             </div>

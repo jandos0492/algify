@@ -16,6 +16,7 @@ import DynamicProgrammingVideos from './components/Videos/DynamicProgrammingVide
 import StackVideos from './components/Videos/StackVideos';
 import ExhaustiveRecursionVideos from './components/Videos/ExhaustiveRecursionVideos';
 import MixedRecallVideos from './components/Videos/MixedRecallVideos';
+import BeginnerRecursionVideos from './components/Videos/BeginnerRecursionVideos';
 import NavBar from "./components/NavBar";
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
             {isAuthenticated && <Route path="/stack/:id" element={<StackVideos />} />}
             {isAuthenticated && <Route path="/exhaustive-recursion/:id" element={<ExhaustiveRecursionVideos />} />}
             {isAuthenticated && <Route path="/mixed-recall/:id" element={<MixedRecallVideos />} />}
+            {isAuthenticated && <Route path="/beginner-recursion/:id" element={<BeginnerRecursionVideos />} />}
           </Routes>
         </>
       )}

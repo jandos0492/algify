@@ -11,174 +11,174 @@ module.exports = {
     options.tableName = "MixedRecalls";
     return queryInterface.bulkInsert(options, [
       {
-        no: 102,
+        no: 111,
         name: 'mixed recall welcaome',
         video: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/mixed-recall-welcome.mov'
       },
       {
-        no: 103,
+        no: 112,
         name: 'linked palindrome',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/linked-palindrome-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/linked-palindrome-walkthrough.mov'
       },
       {
-        no: 104,
+        no: 113,
         name: 'middle value',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/middle-value-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/middle-value-walkthrough.mov'
       },
       {
-        no: 105,
+        no: 114,
         name: 'linked list cycle',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/linked-list-cycle-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/linked-list-cycle-walkthrough.mov'
       },
       {
-        no: 106,
+        no: 115,
         name: 'lowest common ancestor',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/lowest-common-ancestor-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/lowest-common-ancestor-walkthrough.mov'
       },
       {
-        no: 107,
+        no: 116,
         name: 'flip tree',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/flip-tree-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/flip-tree-walkthrough.mov'
       },
       {
-        no: 108,
+        no: 117,
         name: 'lefty nodes',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/lefty-nodes-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/lefty-nodes-walkthrough.mov'
       },
       {
-        no: 109,
+        no: 118,
         name: 'can color',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/can-color-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/can-color-walkthrough.mov'
       },
       {
-        no: 110,
+        no: 119,
         name: 'tolerant teams',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/tolerant-teams-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/tolerant-teams-walkthrough.mov'
       },
       {
-        no: 111,
+        no: 120,
         name: 'rare routing',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/rare-routing-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/rare-routing-walkthrough.mov'
       },
       {
-        no: 112,
+        no: 121,
         name: 'max increasing subseq',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/max-increasing-subseq-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/max-increasing-subseq-walkthrough.mov'
       },
       {
-        no: 113,
+        no: 122,
         name: 'positioning plants',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/positioning-plants-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/positioning-plants-walkthrough.mov'
       },
       {
-        no: 114,
+        no: 123,
         name: 'breaking boundaries',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/breaking-boundaries-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/breaking-boundaries-walkthrough.mov'
       },
       {
-        no: 115,
+        no: 124,
         name: 'merge sort',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/merge-sort-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/merge-sort-walkthrough.mov'
       },
       {
-        no: 116,
+        no: 125,
         name: 'combine intervals',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/combine-intervals-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/combine-intervals-walkthrough.mov'
       },
       {
-        no: 117,
+        no: 126,
         name: 'binary search',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/binary-search-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/binary-search-walkthrough.mov'
       },
       {
-        no: 118,
+        no: 127,
         name: 'binary search tree includes',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/binary-search-tree-includes-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/binary-search-tree-includes-walkthrough.mov'
       },
       {
-        no: 119,
+        no: 128,
         name: 'is binary search tree',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/is-binary-search-tree-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/is-binary-search-tree-walkthrough.mov'
       },
       {
-        no: 120,
+        no: 129,
         name: 'post order',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/post-order-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/post-order-walkthrough.mov'
       },
       {
-        no: 121,
+        no: 130,
         name: 'build tree in post',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/build-tree-in-post-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/build-tree-in-post-walkthrough.mov'
       },
       {
-        no: 122,
+        no: 131,
         name: 'build tree in pre',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/build-tree-in-pre-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/build-tree-in-pre-walkthrough.mov'
       },
       {
-        no: 123,
+        no: 132,
         name: 'lexical order',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/lexical-order-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/lexical-order-walkthrough.mov'
       },
       {
-        no: 124,
+        no: 133,
         name: 'detect dictionary',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/detect-dictionary-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/detect-dictionary-walkthrough.mov'
       },
       {
-        no: 125,
+        no: 134,
         name: 'topological order',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/topological-order-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/topological-order-walkthrough.mov'
       },
       {
-        no: 126,
+        no: 135,
         name: 'safe cracking',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/safe-cracking-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/safe-cracking-walkthrough.mov'
       },
       {
-        no: 127,
+        no: 136,
         name: 'string search',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/string-search-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/string-search-walkthrough.mov'
       },
       {
-        no: 128,
+        no: 137,
         name: 'token replace',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/token-replace-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/token-replace-walkthrough.mov'
       },
       {
-        no: 129,
+        no: 138,
         name: 'token transform',
         approachVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/token-transform-approach.mov',
         walkthroughVideo: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/token-transform-walkthrough.mov'
       },
       {
-        no: 130,
+        no: 139,
         name: 'congratulations',
         video: 'https://algify-videos.s3.us-east-2.amazonaws.com/mixed-recall/congratulations.mov',
       }
